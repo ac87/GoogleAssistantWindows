@@ -250,3 +250,7 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+/Secrets/client_id.json
+/libmp3lame.32.dll
+/libmp3lame.64.dll
