@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GoogleAssistantWindows"
         mc:Ignorable="d"
-        Title="Google Assistant Windows" Height="350" Width="525" Loaded="MainWindow_OnLoaded" ResizeMode="NoResize">
+        Title="Google Assistant Windows" Height="100" Width="525" Loaded="MainWindow_OnLoaded" ResizeMode="CanMinimize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
@@ -20,7 +20,8 @@
 
             <local:GoogleAccountControl />
 
-            <Button x:Name="ButtonRecord" Content="Record" Grid.Column="1" HorizontalAlignment="Left" Margin="26,22,0,0" VerticalAlignment="Top" Width="134" Click="ButtonRecord_OnClick" IsEnabled="False"/>
+            <Button x:Name="ButtonRecord" Content="Press" Grid.Column="1" Padding="10" Margin="0,0,40,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="134" Click="ButtonRecord_OnClick" IsEnabled="False"/>
+            <Button Content="Debug" Grid.Column="1" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Center" Padding="10" Click="DebugButton_OnClick"/>
         </Grid>
 
         <TextBox Grid.Row="1" x:Name="TextBoxOutput" Margin="4" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="" VerticalAlignment="Stretch" IsReadOnly="True" ScrollViewer.VerticalScrollBarVisibility="Auto" />

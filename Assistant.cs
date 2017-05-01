@@ -16,6 +16,9 @@ namespace GoogleAssistantWindows
         public delegate void DebugOutputDelegate(string debug);
         public event DebugOutputDelegate OnDebug;
 
+        public delegate void StoppedListeningDelegate();
+        public event StoppedListeningDelegate OnStoppedListening;
+
         private Channel _channel;
         private EmbeddedAssistant.EmbeddedAssistantClient _assistant;
 
@@ -100,6 +103,8 @@ namespace GoogleAssistantWindows
                 _waveIn = null;
                 _recordTimer.Stop();
 
+                OnStoppedListening?.Invoke();
+
                 OnDebug?.Invoke("Send Request Complete");
                 _requestStream.CompleteAsync();                
             }
@@ -133,6 +138,8 @@ namespace GoogleAssistantWindows
             _writing = false;
         }
 
+        private bool _nonCloseResponseReceived = false;
+
         private async Task WaitForResponse()
         {
             var response = await _responseStream.MoveNext();
@@ -142,12 +149,22 @@ namespace GoogleAssistantWindows
 
                 OnDebug?.Invoke(ResponseToOutput(currentResponse));
 
+                if (!String.IsNullOrEmpty(currentResponse.Result?.SpokenRequestText))
+                    _nonCloseResponseReceived = true; // if the assistant has recognised something this stops the failure notification playing
+
                 if (currentResponse.AudioOut != null)
                     _audioOut.Play(currentResponse.AudioOut.AudioData.ToByteArray());
 
                 if ((currentResponse.Result != null && currentResponse.Result.MicrophoneMode == ConverseResult.Types.MicrophoneMode.CloseMicrophone)
                     || currentResponse.EventType == ConverseResponse.Types.EventType.EndOfUtterance)
                     StopRecording();
+
+                if (currentResponse.Result != null && currentResponse.Result.MicrophoneMode == ConverseResult.Types.MicrophoneMode.CloseMicrophone)
+                {
+                    // play failure notification if nothing recognised.
+                    if (!_nonCloseResponseReceived)
+                        _audioOut.PlayNegativeNotification(); 
+                }
 
                 await WaitForResponse();
             }
@@ -181,5 +198,7 @@ namespace GoogleAssistantWindows
 
             return debug;
         }
+
+        public bool IsInitialised() => _assistant != null;
     }
 }
