@@ -2,6 +2,11 @@
 
 First attempt at getting the Google Assistant SDK in a C# WPF application. Created mostly on Windows having never used gRPC or OAuth before. Its not pretty but its marginally nicer than installing Python and using Google's example.
 
+Comprises of 
+- Tiny UI to login / Show the logged in user
+- Minimise to Tray 
+- Global Keyboard shortcut for activation - Ctrl+Alt+G
+
 ## Building
 
 1. Clone the repo (optionally with submodules)
@@ -26,3 +31,9 @@ This leaves a few `google.api` files missing, so I had to generate the whole of 
 http://developers.google.com/assistant/sdk/
 
 http://grpc.io/docs/quickstart/csharp.html
+
+## Credits 
+
+https://www.freesound.org/people/TheGertz/sounds/235911/
+https://www.freesound.org/people/cameronmusic/sounds/138417/
+https://www.iconfinder.com/icons/1055024/audio_mic_microphone_icon
