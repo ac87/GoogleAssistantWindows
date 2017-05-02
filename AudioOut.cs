@@ -1,44 +1,43 @@
 ﻿using System;
+using System.IO;
 using NAudio.Wave;
 
 namespace GoogleAssistantWindows
 {
     public class AudioOut
     {
+        private static readonly WaveFormat WaveFormat = new WaveFormat(Const.SampleRateHz, 1);
+
         private WaveOut _waveOut;
-        private BufferedWaveProvider _audioProvider;
+
+        private MemoryStream _ms;
+        private RawSourceWaveStream _waveStream;
 
         public void Play(byte[] bytes)
         {
             if (_waveOut == null)
             {
-                // Long responses need a large buffer, i.e. asking "Where is Google"
-                // might be better to get all the bytes and play it without a BufferedWaveProvider 
-
-                WaveFormat format = new WaveFormat(Const.SampleRateHz, 1);
-                _audioProvider = new BufferedWaveProvider(format) { BufferDuration = TimeSpan.FromSeconds(15) };
-
-                _waveOut = new WaveOut();                
-                _waveOut.Init(_audioProvider);
+                _waveOut = new WaveOut();
+                _waveOut.PlaybackStopped += (sender, args) =>
+                {
+                    _waveStream.Dispose();
+                    _ms.Dispose();
+                    _ms = null;
+                };
             }
+            if (_ms == null)
+                _ms = new MemoryStream();
 
-            if (_waveOut.PlaybackState != PlaybackState.Playing)
+            _ms.Write(bytes, 0, bytes.Length);
+
+            // cheat, I know at the bitrate requested it splits it in this size chunks, if its not this size its the end
+            if (bytes.Length != 1600) 
             {
-                _waveOut.Play();                    
-                // TODO figure out when the wave out stops getting data and stop it.
+                _ms.Position = 0;
+                _waveStream = new RawSourceWaveStream(_ms, WaveFormat);
+                _waveOut.Init(_waveStream);
+                _waveOut.Play();                                
             }
-
-            _audioProvider.AddSamples(bytes, 0, bytes.Length);
-        }
-
-        /// <summary>
-        /// Clears the previous audio buffer for the new incoming speech.
-        /// </summary>
-        public void ClearPrevious()
-        {
-            if (_waveOut?.PlaybackState == PlaybackState.Playing)
-                _waveOut.Stop();
-            _audioProvider?.ClearBuffer();
         }
 
         public void PlayNotification()

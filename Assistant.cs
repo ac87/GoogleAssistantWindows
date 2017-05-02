@@ -44,8 +44,6 @@ namespace GoogleAssistantWindows
         {
             try
             {
-                _audioOut.ClearPrevious();
-
                 AsyncDuplexStreamingCall<ConverseRequest, ConverseResponse> converse = _assistant.Converse();
 
                 _requestStream = converse.RequestStream;
@@ -204,13 +202,13 @@ namespace GoogleAssistantWindows
         private string ResponseToOutput(ConverseResponse currentResponse)
         {
             if (currentResponse.AudioOut != null)
-                return "Response - AudioOut {currentResponse.AudioOut.AudioData.Length}";
+                return $"Response - AudioOut {currentResponse.AudioOut.AudioData.Length}";
             if (currentResponse.Error != null)
-                return "Response - Error:{currentResponse.Error}";
+                return $"Response - Error:{currentResponse.Error}";
             if (currentResponse.Result != null)
-                return "Response - Result:{currentResponse.Result}";
+                return $"Response - Result:{currentResponse.Result}";
             if (currentResponse.EventType != ConverseResponse.Types.EventType.Unspecified)
-                return "Response - EventType:{currentResponse.EventType}";
+                return $"Response - EventType:{currentResponse.EventType}";
 
             return "Response Empty?";
         }
