@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Media.Imaging;
 using NAudio.Wave;
 
 namespace GoogleAssistantWindows
@@ -16,18 +11,34 @@ namespace GoogleAssistantWindows
         public void Play(byte[] bytes)
         {
             if (_waveOut == null)
-                _waveOut = new WaveOut();
-
-            if (_audioProvider == null)
             {
-                WaveFormat format = new WaveFormat(Const.SampleRateHz, 1);
-                _audioProvider = new BufferedWaveProvider(format);
+                // Long responses need a large buffer, i.e. asking "Where is Google"
+                // might be better to get all the bytes and play it without a BufferedWaveProvider 
 
+                WaveFormat format = new WaveFormat(Const.SampleRateHz, 1);
+                _audioProvider = new BufferedWaveProvider(format) { BufferDuration = TimeSpan.FromSeconds(15) };
+
+                _waveOut = new WaveOut();                
                 _waveOut.Init(_audioProvider);
-                _waveOut.Play();
+            }
+
+            if (_waveOut.PlaybackState != PlaybackState.Playing)
+            {
+                _waveOut.Play();                    
+                // TODO figure out when the wave out stops getting data and stop it.
             }
 
             _audioProvider.AddSamples(bytes, 0, bytes.Length);
+        }
+
+        /// <summary>
+        /// Clears the previous audio buffer for the new incoming speech.
+        /// </summary>
+        public void ClearPrevious()
+        {
+            if (_waveOut?.PlaybackState == PlaybackState.Playing)
+                _waveOut.Stop();
+            _audioProvider?.ClearBuffer();
         }
 
         public void PlayNotification()

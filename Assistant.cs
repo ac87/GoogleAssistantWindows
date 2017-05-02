@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
 using Google.Assistant.Embedded.V1Alpha1;
@@ -34,39 +32,54 @@ namespace GoogleAssistantWindows
 
         private readonly AudioOut _audioOut = new AudioOut();
 
+        private bool _requestStreamAvailable = false;
+
         public void InitAssistantForUser(ChannelCredentials channelCreds)
         {
-            _channel = new Channel(Const.AssistantEndpoint, channelCreds);            
-            _assistant = new EmbeddedAssistant.EmbeddedAssistantClient(_channel);            
+            _channel = new Channel(Const.AssistantEndpoint, channelCreds);
+            _assistant = new EmbeddedAssistant.EmbeddedAssistantClient(_channel);
         }
-        
+
         public async void NewConversation()
         {
-            AsyncDuplexStreamingCall<ConverseRequest, ConverseResponse> converse = _assistant.Converse();
-
-            _requestStream = converse.RequestStream;
-            _responseStream = converse.ResponseStream;
-
-            OnDebug?.Invoke("New Request");
-
-            // Once this opening request is issued if its not followed by audio an error of 'code: 14, message: Service Unavaible.' comes back, really not helpful Google!
-            await _requestStream.WriteAsync(CreateNewRequest());
-
-            _waveIn = new WaveIn { WaveFormat = new WaveFormat(Const.SampleRateHz, 1) };
-
-            _waveIn.DataAvailable += ProcessInAudio;
-
-            _waveIn.StartRecording();
-
-            _recordTimer = new Timer { Interval = Const.MaxRecordMillis }; // stop recording after a given amount of time
-            _recordTimer.Elapsed += (sender, args) =>
+            try
             {
-                OnDebug?.Invoke("Max Record Time Reached");
-                StopRecording();
-            };
-            _recordTimer.Start();
+                _audioOut.ClearPrevious();
 
-            await WaitForResponse();
+                AsyncDuplexStreamingCall<ConverseRequest, ConverseResponse> converse = _assistant.Converse();
+
+                _requestStream = converse.RequestStream;
+                _responseStream = converse.ResponseStream;
+
+                OnDebug?.Invoke("New Request");
+
+                // Once this opening request is issued if its not followed by audio an error of 'code: 14, message: Service Unavaible.' comes back, really not helpful Google!
+                await _requestStream.WriteAsync(CreateNewRequest());
+
+                _requestStreamAvailable = true;
+
+                _waveIn = new WaveIn { WaveFormat = new WaveFormat(Const.SampleRateHz, 1) };            
+                _waveIn.DataAvailable += ProcessInAudio;
+                _waveIn.StartRecording();
+
+                _recordTimer = new Timer { Interval = Const.MaxRecordMillis }; // stop recording after a given amount of time
+                _recordTimer.Elapsed += (sender, args) =>
+                {
+                    OnDebug?.Invoke("Max Record Time Reached");
+                    StopRecording();
+                };
+                _recordTimer.Start();
+
+                await WaitForResponse();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                OnDebug?.Invoke($"Error {ex.Message}");
+
+                OnDebug?.Invoke("Stopping WaveIn");
+                StopRecording();
+            }
         }       
 
         private ConverseRequest CreateNewRequest()
@@ -92,7 +105,7 @@ namespace GoogleAssistantWindows
             converseRequest.Config = new ConverseConfig() { AudioInConfig = audioIn, AudioOutConfig = audioOut, ConverseState = state };
 
             return converseRequest;
-        }
+        }        
 
         private void StopRecording()
         {
@@ -106,6 +119,7 @@ namespace GoogleAssistantWindows
                 OnStoppedListening?.Invoke();
 
                 OnDebug?.Invoke("Send Request Complete");
+                _requestStreamAvailable = false;
                 _requestStream.CompleteAsync();                
             }
         }
@@ -131,8 +145,12 @@ namespace GoogleAssistantWindows
                 var buffer = _writeBuffer[0];
                 _writeBuffer.RemoveAt(0);
 
-                request = new ConverseRequest() { AudioIn = ByteString.CopyFrom(buffer) };
-                await _requestStream.WriteAsync(request);
+                if (_requestStreamAvailable)
+                {
+                    // don't write after the RequestComplete is sent or get an gRPC error.
+                    request = new ConverseRequest() {AudioIn = ByteString.CopyFrom(buffer)};
+                    await _requestStream.WriteAsync(request);
+                }
             }
 
             _writing = false;
@@ -141,7 +159,7 @@ namespace GoogleAssistantWindows
         private bool _nonCloseResponseReceived = false;
 
         private async Task WaitForResponse()
-        {
+        {           
             var response = await _responseStream.MoveNext();
             if (response)
             {
@@ -164,7 +182,7 @@ namespace GoogleAssistantWindows
                     // play failure notification if nothing recognised.
                     if (!_nonCloseResponseReceived)
                         _audioOut.PlayNegativeNotification(); 
-                }
+                }            
 
                 await WaitForResponse();
             }
@@ -185,18 +203,16 @@ namespace GoogleAssistantWindows
 
         private string ResponseToOutput(ConverseResponse currentResponse)
         {
-            string debug = "Response";
-
             if (currentResponse.AudioOut != null)
-                debug = ($"{debug}\n  AudioOut {currentResponse.AudioOut.AudioData.Length}");
+                return "Response - AudioOut {currentResponse.AudioOut.AudioData.Length}";
             if (currentResponse.Error != null)
-                debug = ($"{debug}\n  Error:{currentResponse.Error}");
+                return "Response - Error:{currentResponse.Error}";
             if (currentResponse.Result != null)
-                debug = ($"{debug}\n   Result:{currentResponse.Result}");
+                return "Response - Result:{currentResponse.Result}";
             if (currentResponse.EventType != ConverseResponse.Types.EventType.Unspecified)
-                debug = ($"{debug}\n\n   EventType:{currentResponse.EventType}");
+                return "Response - EventType:{currentResponse.EventType}";
 
-            return debug;
+            return "Response Empty?";
         }
 
         public bool IsInitialised() => _assistant != null;

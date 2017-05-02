@@ -8,7 +8,10 @@ namespace GoogleAssistantWindows
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {       
+    {
+        private const int NormalHeight = 100;
+        private const int DebugHeight = 350;
+
         private readonly UserManager _userManager;
         private readonly Assistant _assistant;
 
@@ -105,18 +108,25 @@ namespace GoogleAssistantWindows
 
         public void Output(string output)
         {
-            if (TextBoxOutput.Dispatcher.CheckAccess())
+            if (ListBoxOutput.Dispatcher.CheckAccess())
             {
-                TextBoxOutput.Text = TextBoxOutput.Text + output + Environment.NewLine;
-                TextBoxOutput.ScrollToEnd();
+                // stop using memory for old debug lines.
+                if (ListBoxOutput.Items.Count > 100)
+                    ListBoxOutput.Items.RemoveAt(0);
+
+                ListBoxOutput.Items.Add(output);
+                ListBoxOutput.ScrollIntoView(ListBoxOutput.Items[ListBoxOutput.Items.Count-1]);
+
+                if (output.StartsWith("Error") && Height == NormalHeight)
+                    Height = DebugHeight;
             }
             else
-                TextBoxOutput.Dispatcher.BeginInvoke(new Action(() => Output(output)));
+                ListBoxOutput.Dispatcher.BeginInvoke(new Action(() => Output(output)));
         }
 
         private void DebugButton_OnClick(object sender, RoutedEventArgs e)
         {
-            Height = (Height == 100 ? 350 : 100);
+            Height = (Height == NormalHeight ? DebugHeight : NormalHeight);
         }
     }
 }
