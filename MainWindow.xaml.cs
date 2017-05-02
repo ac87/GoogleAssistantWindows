@@ -111,7 +111,7 @@ namespace GoogleAssistantWindows
             if (ListBoxOutput.Dispatcher.CheckAccess())
             {
                 // stop using memory for old debug lines.
-                if (ListBoxOutput.Items.Count > 100)
+                if (ListBoxOutput.Items.Count > 500)
                     ListBoxOutput.Items.RemoveAt(0);
 
                 ListBoxOutput.Items.Add(output);
