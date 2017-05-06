@@ -1,11 +1,17 @@
 ﻿using System;
 using System.IO;
+using System.Media;
+using System.Resources;
+using System.Windows.Media;
 using NAudio.Wave;
 
 namespace GoogleAssistantWindows
 {
     public class AudioOut
     {
+        public delegate void AudioPlaybackStateChangeDelegate(bool started);
+        public event AudioPlaybackStateChangeDelegate OnAudioPlaybackStateChanged;
+
         private static readonly WaveFormat WaveFormat = new WaveFormat(Const.SampleRateHz, 1);
 
         private WaveOut _waveOut;
@@ -23,6 +29,8 @@ namespace GoogleAssistantWindows
                     _waveStream.Dispose();
                     _ms.Dispose();
                     _ms = null;
+
+                    OnAudioPlaybackStateChanged?.Invoke(false);
                 };
             }
             if (_ms == null)
@@ -36,27 +44,28 @@ namespace GoogleAssistantWindows
                 _ms.Position = 0;
                 _waveStream = new RawSourceWaveStream(_ms, WaveFormat);
                 _waveOut.Init(_waveStream);
-                _waveOut.Play();                                
+                _waveOut.Play();
+
+                OnAudioPlaybackStateChanged?.Invoke(true);
             }
         }
 
         public void PlayNotification()
         {
-            PlayNotification(AppDomain.CurrentDomain.BaseDirectory + "Resources\\thegertz__notification-sound.wav");
+            PlayNotification(AppDomain.CurrentDomain.BaseDirectory + "Resources\\positive.wav");
         }
 
         public void PlayNegativeNotification()
-        {
-            PlayNotification(AppDomain.CurrentDomain.BaseDirectory + "Resources\\cameronmusic__oh-no-1.wav");
+        { 
+            PlayNotification(AppDomain.CurrentDomain.BaseDirectory + "Resources\\negative.wav");
         }
 
         public void PlayNotification(string notificationFile)
         {
-            if (_waveOut == null)
-                _waveOut = new WaveOut();
-
-            _waveOut.Init(new WaveFileReader(notificationFile));
-            _waveOut.Play();
+            using (var soundPlayer = new SoundPlayer(notificationFile))
+            {
+                soundPlayer.Play();
+            }            
         }
     }
 }

@@ -158,10 +158,10 @@
     <Content Include="mic.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\cameronmusic__oh-no-1.wav">
+    <Content Include="Resources\negative.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\thegertz__notification-sound.wav">
+    <Content Include="Resources\positive.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Secrets\client_id.json">

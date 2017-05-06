@@ -17,7 +17,7 @@ namespace GoogleAssistantWindows
     /// </summary>
     public class UserManager
     {
-        private const int TokenRefreshTime = 1000 * 60 * 50; // token expires every 60 mins? The token says 3600, maybe need to renew the token every hour.
+        private const int TokenRefreshTime = 1000 * 60 * 50; // token expires every 60 mins for assistant? The token says 3600s, maybe need to renew the token every minute?
 
         private UserCredential _credential;
         private Timer _tokenRefreshTimer;

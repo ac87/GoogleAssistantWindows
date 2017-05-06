@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Timers;
 using Google.Assistant.Embedded.V1Alpha1;
 using Google.Protobuf;
 using Grpc.Core;
@@ -11,11 +10,11 @@ namespace GoogleAssistantWindows
 {
     public class Assistant
     {
-        public delegate void DebugOutputDelegate(string debug);
+        public delegate void DebugOutputDelegate(string debug, bool consoleOnly = false);
         public event DebugOutputDelegate OnDebug;
 
-        public delegate void StoppedListeningDelegate();
-        public event StoppedListeningDelegate OnStoppedListening;
+        public delegate void AssistantWorkingDelegate(AssistantState state);
+        public event AssistantWorkingDelegate OnAssistantStateChanged;
 
         private Channel _channel;
         private EmbeddedAssistant.EmbeddedAssistantClient _assistant;
@@ -23,16 +22,27 @@ namespace GoogleAssistantWindows
         private IClientStreamWriter<ConverseRequest> _requestStream;
         private IAsyncStreamReader<ConverseResponse> _responseStream;
 
+        // todo this doesn't seem to be needed anymore...
         private bool _writing;
         private readonly List<byte[]> _writeBuffer = new List<byte[]>();
 
         private WaveIn _waveIn;
 
-        private Timer _recordTimer;
-
         private readonly AudioOut _audioOut = new AudioOut();
 
+        // todo tidy this mess of flags up
         private bool _requestStreamAvailable = false;
+        private bool _assistantResponseReceived = false;
+        private bool _sendSpeech = false;
+        private bool _followOn = false;
+
+        // If this documentation was a flow chart it would have been much better
+        // https://developers.google.com/assistant/sdk/reference/rpc/google.assistant.embedded.v1alpha1#google.assistant.embedded.v1alpha1.EmbeddedAssistant
+
+        public Assistant()
+        {
+            _audioOut.OnAudioPlaybackStateChanged += OnAudioPlaybackStateChanged;
+        }        
 
         public void InitAssistantForUser(ChannelCredentials channelCreds)
         {
@@ -44,38 +54,35 @@ namespace GoogleAssistantWindows
         {
             try
             {
+                OnAssistantStateChanged?.Invoke(AssistantState.Listening);
+
+                _followOn = false;
+                _assistantResponseReceived = false;
+
                 AsyncDuplexStreamingCall<ConverseRequest, ConverseResponse> converse = _assistant.Converse();
 
                 _requestStream = converse.RequestStream;
                 _responseStream = converse.ResponseStream;
 
-                OnDebug?.Invoke("New Request");
+                OnDebug?.Invoke("New Conversation - New Config Request");
 
                 // Once this opening request is issued if its not followed by audio an error of 'code: 14, message: Service Unavaible.' comes back, really not helpful Google!
                 await _requestStream.WriteAsync(CreateNewRequest());
 
                 _requestStreamAvailable = true;
+                ResetSendingAudio(true);
 
-                _waveIn = new WaveIn { WaveFormat = new WaveFormat(Const.SampleRateHz, 1) };            
+                // note recreating the WaveIn each time otherwise the recording just stops on follow ups
+                _waveIn = new WaveIn { WaveFormat = new WaveFormat(Const.SampleRateHz, 1) };
                 _waveIn.DataAvailable += ProcessInAudio;
                 _waveIn.StartRecording();
-
-                _recordTimer = new Timer { Interval = Const.MaxRecordMillis }; // stop recording after a given amount of time
-                _recordTimer.Elapsed += (sender, args) =>
-                {
-                    OnDebug?.Invoke("Max Record Time Reached");
-                    StopRecording();
-                };
-                _recordTimer.Start();
 
                 await WaitForResponse();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                OnDebug?.Invoke($"Error {ex.Message}");
-
-                OnDebug?.Invoke("Stopping WaveIn");
+                OnDebug?.Invoke($"Error {ex.Message}");                
                 StopRecording();
             }
         }       
@@ -109,12 +116,12 @@ namespace GoogleAssistantWindows
         {
             if (_waveIn != null)
             {
-                OnDebug?.Invoke("Stop Recording");
+                OnDebug?.Invoke("Stop Recording");                
                 _waveIn.StopRecording();
+                _waveIn.Dispose();
                 _waveIn = null;
-                _recordTimer.Stop();
 
-                OnStoppedListening?.Invoke();
+                OnAssistantStateChanged?.Invoke(AssistantState.Processing);
 
                 OnDebug?.Invoke("Send Request Complete");
                 _requestStreamAvailable = false;
@@ -124,69 +131,116 @@ namespace GoogleAssistantWindows
 
         private void ProcessInAudio(object sender, WaveInEventArgs e)
         {
-            // cannot do more than one write at a time so if its writing already add the new data to the queue
-            if (_writing)
-                _writeBuffer.Add(e.Buffer);
-            else
-                WriteAudioData(ByteString.CopyFrom(e.Buffer));
+            OnDebug?.Invoke($"Process Audio {e.Buffer.Length} SendSpeech={_sendSpeech} Writing={_writing}", true);
+
+            if (_sendSpeech)
+            {                
+                // cannot do more than one write at a time so if its writing already add the new data to the queue
+                if (_writing)
+                    _writeBuffer.Add(e.Buffer);
+                else
+                    WriteAudioData(e.Buffer);
+            }
         }
 
-        private async Task WriteAudioData(ByteString bytes)
+        private async Task WriteAudioData(byte[] bytes)
         {
             _writing = true;
-            var request = new ConverseRequest() { AudioIn = bytes };
-
-            await _requestStream.WriteAsync(request);
+            await WriteAudioIn(bytes);
 
             while (_writeBuffer.Count > 0)
             {
                 var buffer = _writeBuffer[0];
                 _writeBuffer.RemoveAt(0);
 
-                if (_requestStreamAvailable)
+                if (_requestStreamAvailable && _sendSpeech)
                 {
                     // don't write after the RequestComplete is sent or get an gRPC error.
-                    request = new ConverseRequest() {AudioIn = ByteString.CopyFrom(buffer)};
-                    await _requestStream.WriteAsync(request);
+                    await WriteAudioIn(buffer);
                 }
             }
 
             _writing = false;
         }
 
-        private bool _nonCloseResponseReceived = false;
+        private async Task WriteAudioIn(byte[] buffer)
+        {
+            OnDebug?.Invoke("Write Audio " + buffer.Length, true);
+            var request = new ConverseRequest() {AudioIn = ByteString.CopyFrom(buffer)};
+            await _requestStream.WriteAsync(request);
+        }
 
         private async Task WaitForResponse()
         {           
             var response = await _responseStream.MoveNext();
             if (response)
             {
+                // multiple response elements are received per response, each can contain one of the Result, AudioOut or EventType fields
                 ConverseResponse currentResponse = _responseStream.Current;
 
+                // Debug output the whole response, useful for.. debugging.
                 OnDebug?.Invoke(ResponseToOutput(currentResponse));
 
-                if (!String.IsNullOrEmpty(currentResponse.Result?.SpokenRequestText))
-                    _nonCloseResponseReceived = true; // if the assistant has recognised something this stops the failure notification playing
+                // EndOfUtterance, Assistant has recognised something so stop sending audio 
+                if (currentResponse.EventType == ConverseResponse.Types.EventType.EndOfUtterance)                
+                    ResetSendingAudio(false);
 
                 if (currentResponse.AudioOut != null)
                     _audioOut.Play(currentResponse.AudioOut.AudioData.ToByteArray());
 
-                if ((currentResponse.Result != null && currentResponse.Result.MicrophoneMode == ConverseResult.Types.MicrophoneMode.CloseMicrophone)
-                    || currentResponse.EventType == ConverseResponse.Types.EventType.EndOfUtterance)
-                    StopRecording();
-
-                if (currentResponse.Result != null && currentResponse.Result.MicrophoneMode == ConverseResult.Types.MicrophoneMode.CloseMicrophone)
+                if (currentResponse.Result != null)
                 {
-                    // play failure notification if nothing recognised.
-                    if (!_nonCloseResponseReceived)
-                        _audioOut.PlayNegativeNotification(); 
-                }            
+                    // if the assistant has recognised something, flag this so the failure notification isn't played
+                    if (!String.IsNullOrEmpty(currentResponse.Result.SpokenRequestText))
+                        _assistantResponseReceived = true;
+
+                    switch (currentResponse.Result.MicrophoneMode)
+                    {                        
+                        // this is the end of the current conversation
+                        case ConverseResult.Types.MicrophoneMode.CloseMicrophone:
+                            StopRecording();
+
+                            // play failure notification if nothing recognised.
+                            if (!_assistantResponseReceived)
+                            {
+                                _audioOut.PlayNegativeNotification();
+                                OnAssistantStateChanged?.Invoke(AssistantState.Inactive);
+                            }
+                            break;
+                        case ConverseResult.Types.MicrophoneMode.DialogFollowOn:
+                            // stop recording as the follow on is in a whole new conversation, so may as well restart the same flow
+                            StopRecording();
+                            _followOn = true;
+                            break;
+                    }
+                }
 
                 await WaitForResponse();
             }
             else
                 OnDebug?.Invoke("Response End");
-        }      
+        }
+
+        private void ResetSendingAudio(bool send)
+        {
+            _writing = false;            
+            _writeBuffer.Clear();
+            _sendSpeech = send;
+        }
+
+        private void OnAudioPlaybackStateChanged(bool started)
+        {
+            if (started)
+                OnAssistantStateChanged?.Invoke(AssistantState.Speaking);
+            else
+            {
+                // stopped
+                if (_followOn)
+                    NewConversation();
+                else
+                    OnAssistantStateChanged?.Invoke(AssistantState.Inactive);
+            }
+        }
 
         public void Shutdown()
         {
@@ -214,5 +268,13 @@ namespace GoogleAssistantWindows
         }
 
         public bool IsInitialised() => _assistant != null;
+    }
+
+    public enum AssistantState
+    {
+        Inactive,
+        Processing,
+        Listening,
+        Speaking,
     }
 }

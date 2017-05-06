@@ -21,6 +21,8 @@ namespace GoogleAssistantWindows
 
         private readonly AudioOut _audioOut;
 
+        private AssistantState _assistantState = AssistantState.Inactive;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -39,7 +41,7 @@ namespace GoogleAssistantWindows
             // When minimized it will hide in the tray. but the global keyboard hook should still work
             _notifyIcon = new NotifyIcon();
             _notifyIcon.Icon = new System.Drawing.Icon("Mic.ico");
-            _notifyIcon.Text = "Google Assistant Windows";            
+            _notifyIcon.Text = Title;            
             _notifyIcon.DoubleClick +=
                 delegate
                 {
@@ -50,11 +52,11 @@ namespace GoogleAssistantWindows
 
             _assistant = new Assistant();
             _assistant.OnDebug += Output;
-            _assistant.OnStoppedListening += OnStoppedListening;
+            _assistant.OnAssistantStateChanged += OnAssistantStateChanged;
 
             _userManager = UserManager.Instance;
-            _userManager.OnUserUpdate += OnUserUpdate;
-        }
+            _userManager.OnUserUpdate += OnUserUpdate;            
+        }        
 
         protected override void OnStateChanged(EventArgs e)
         {
@@ -65,13 +67,19 @@ namespace GoogleAssistantWindows
             }
             base.OnStateChanged(e);
         }
+        
+        private void OnAssistantStateChanged(AssistantState state)
+        {
+            _assistantState = state;
+            UpdateButtonText(state);
+        }
 
-        private void OnStoppedListening()
+        private void UpdateButtonText(AssistantState state)
         {
             if (ButtonRecord.Dispatcher.CheckAccess())
-                ButtonRecord.Content = "Press";
+                ButtonRecord.Content = state == AssistantState.Inactive ? "Press" : state.ToString();
             else
-                ButtonRecord.Dispatcher.BeginInvoke(new Action(OnStoppedListening));
+                ButtonRecord.Dispatcher.BeginInvoke(new Action(()=>UpdateButtonText(state)));
         }
 
         private void OnUserUpdate(UserManager.GoogleUserData userData)
@@ -98,18 +106,25 @@ namespace GoogleAssistantWindows
 
         private void StartListening()
         {
-            if (_assistant.IsInitialised())
+            if (_assistant.IsInitialised() && _assistantState == AssistantState.Inactive)
             {
-                _assistant.NewConversation();                
-                ButtonRecord.Content = "Listening...";
+                _assistant.NewConversation();          
                 _audioOut.PlayNotification();
             }
         }
 
-        public void Output(string output)
+        public void Output(string output, bool consoleOnly = false)
         {
+            if (consoleOnly)
+            {
+                System.Diagnostics.Debug.WriteLine(output);
+                return;
+            }
+
             if (ListBoxOutput.Dispatcher.CheckAccess())
             {
+                System.Diagnostics.Debug.WriteLine(output);
+
                 // stop using memory for old debug lines.
                 if (ListBoxOutput.Items.Count > 500)
                     ListBoxOutput.Items.RemoveAt(0);
