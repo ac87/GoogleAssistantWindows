@@ -182,11 +182,11 @@ namespace GoogleAssistantWindows
                 OnDebug?.Invoke(ResponseToOutput(currentResponse));
 
                 // EndOfUtterance, Assistant has recognised something so stop sending audio 
-                if (currentResponse.EventType == ConverseResponse.Types.EventType.EndOfUtterance)                
+                if (currentResponse.EventType == ConverseResponse.Types.EventType.EndOfUtterance)
                     ResetSendingAudio(false);
 
                 if (currentResponse.AudioOut != null)
-                    _audioOut.Play(currentResponse.AudioOut.AudioData.ToByteArray());
+                    _audioOut.AddBytesToPlay(currentResponse.AudioOut.AudioData.ToByteArray());
 
                 if (currentResponse.Result != null)
                 {
@@ -195,7 +195,7 @@ namespace GoogleAssistantWindows
                         _assistantResponseReceived = true;
 
                     switch (currentResponse.Result.MicrophoneMode)
-                    {                        
+                    {
                         // this is the end of the current conversation
                         case ConverseResult.Types.MicrophoneMode.CloseMicrophone:
                             StopRecording();
@@ -218,7 +218,11 @@ namespace GoogleAssistantWindows
                 await WaitForResponse();
             }
             else
+            {
                 OnDebug?.Invoke("Response End");
+                // if we've received any audio... play it.
+                _audioOut.Play();
+            }
         }
 
         private void ResetSendingAudio(bool send)

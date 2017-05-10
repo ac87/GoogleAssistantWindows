@@ -17,9 +17,9 @@ namespace GoogleAssistantWindows
         private WaveOut _waveOut;
 
         private MemoryStream _ms;
-        private RawSourceWaveStream _waveStream;
+        private RawSourceWaveStream _waveStream;       
 
-        public void Play(byte[] bytes)
+        public void AddBytesToPlay(byte[] bytes)
         {
             if (_waveOut == null)
             {
@@ -36,10 +36,12 @@ namespace GoogleAssistantWindows
             if (_ms == null)
                 _ms = new MemoryStream();
 
-            _ms.Write(bytes, 0, bytes.Length);
+            _ms.Write(bytes, 0, bytes.Length);            
+        }
 
-            // cheat, I know at the bitrate requested it splits it in this size chunks, if its not this size its the end
-            if (bytes.Length != 1600) 
+        public void Play()
+        {
+            if (_ms != null && _ms.Length > 0)
             {
                 _ms.Position = 0;
                 _waveStream = new RawSourceWaveStream(_ms, WaveFormat);
