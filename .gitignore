@@ -254,3 +254,5 @@ paket-files/
 /Secrets/client_id.json
 /libmp3lame.32.dll
 /libmp3lame.64.dll
+
+/Tools/
