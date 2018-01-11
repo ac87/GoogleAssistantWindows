@@ -20,12 +20,17 @@ This assumes the generated code is up to date, if not..
 
 ### Generating the gRPC code
 
-Was done haphazardly, in the `proto/` folder `googleapis` is added as submodule, also in the `proto/` folder is a batch script that runs the C# gRPC generator from the Nuget gRPC tools package. 
+1. DownloadTools.ps1 will download the necessary tools to build the gRPC bindings
+2. GenerateGoogleAssistantClient.ps1 will download the proto files from GitHub and will build the c# gRPC code
 
-I had to copy the `third_party\protobuf\src\google\protobuf` into `googleapis\google` for the build to work, I think this is because under linux this third_party folder would be added to `usr/local/include`
+### Register the Device and Device Model
 
-This leaves a few `google.api` files missing, so I had to generate the whole of the googleapis c# gRPC code. I gave up trying to do this in Windows and used a Linux VM instead.
+Ensure you have python 3 installed on your Windows machine
 
+1. pip install --upgrade google-assistant-sdk
+2. google-oauthlib-tool --scope https://www.googleapis.com/auth/assistant-sdk-prototype --headless --save --client-secrets Secrets\client_id.json
+3. googlesamples-assistant-devicetool --client-secrets Secrets\client_id.json register-model --model "<your projectid>-mymodel" --type LIGHT --manufacturer "<your name>" --product-name "Assistant Test"
+4. googlesamples-assistant-devicetool --client-secrets Secrets\client_id.json register-device --device "mylaptop" --model "<your projectid>-mymodel" --nickname "My Laptop" --client-type SERVICE
 
 ## Resources
 http://developers.google.com/assistant/sdk/

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Google.Assistant.Embedded.V1Alpha1;
+using Google.Assistant.Embedded.V1Alpha2;
 using Google.Protobuf;
 using Grpc.Core;
 using NAudio.Wave;
@@ -19,8 +19,8 @@ namespace GoogleAssistantWindows
         private Channel _channel;
         private EmbeddedAssistant.EmbeddedAssistantClient _assistant;
 
-        private IClientStreamWriter<ConverseRequest> _requestStream;
-        private IAsyncStreamReader<ConverseResponse> _responseStream;
+        private IClientStreamWriter<AssistRequest> _requestStream;
+        private IAsyncStreamReader<AssistResponse> _responseStream;
 
         // todo this doesn't seem to be needed anymore...
         private bool _writing;
@@ -59,10 +59,10 @@ namespace GoogleAssistantWindows
                 _followOn = false;
                 _assistantResponseReceived = false;
 
-                AsyncDuplexStreamingCall<ConverseRequest, ConverseResponse> converse = _assistant.Converse();
+                AsyncDuplexStreamingCall<AssistRequest, AssistResponse> assist = _assistant.Assist();
 
-                _requestStream = converse.RequestStream;
-                _responseStream = converse.ResponseStream;
+                _requestStream = assist.RequestStream;
+                _responseStream = assist.ResponseStream;
 
                 OnDebug?.Invoke("New Conversation - New Config Request");
 
@@ -87,11 +87,11 @@ namespace GoogleAssistantWindows
             }
         }       
 
-        private ConverseRequest CreateNewRequest()
+        private AssistRequest CreateNewRequest()
         {
             // initial request is the config this then gets followed by all out audio
 
-            var converseRequest = new ConverseRequest();
+            var converseRequest = new AssistRequest();
 
             var audioIn = new AudioInConfig()
             {
@@ -106,8 +106,9 @@ namespace GoogleAssistantWindows
                 VolumePercentage = 75
             };
 
-            ConverseState state = new ConverseState() { ConversationState = ByteString.Empty };
-            converseRequest.Config = new ConverseConfig() { AudioInConfig = audioIn, AudioOutConfig = audioOut, ConverseState = state };
+            DialogStateIn state = new DialogStateIn() { ConversationState = ByteString.Empty, LanguageCode = "en-US" };
+            DeviceConfig device = new DeviceConfig() { DeviceModelId = "assistanttest-187121-myTest",  DeviceId = "mylaptop" };
+            converseRequest.Config = new AssistConfig() { AudioInConfig = audioIn, AudioOutConfig = audioOut, DialogStateIn = state, DeviceConfig = device };
 
             return converseRequest;
         }        
@@ -166,7 +167,7 @@ namespace GoogleAssistantWindows
         private async Task WriteAudioIn(byte[] buffer)
         {
             OnDebug?.Invoke("Write Audio " + buffer.Length, true);
-            var request = new ConverseRequest() {AudioIn = ByteString.CopyFrom(buffer)};
+            var request = new AssistRequest() {AudioIn = ByteString.CopyFrom(buffer)};
             await _requestStream.WriteAsync(request);
         }
 
@@ -176,28 +177,28 @@ namespace GoogleAssistantWindows
             if (response)
             {
                 // multiple response elements are received per response, each can contain one of the Result, AudioOut or EventType fields
-                ConverseResponse currentResponse = _responseStream.Current;
+                AssistResponse currentResponse = _responseStream.Current;
 
                 // Debug output the whole response, useful for.. debugging.
                 OnDebug?.Invoke(ResponseToOutput(currentResponse));
 
                 // EndOfUtterance, Assistant has recognised something so stop sending audio 
-                if (currentResponse.EventType == ConverseResponse.Types.EventType.EndOfUtterance)
+                if (currentResponse.EventType == AssistResponse.Types.EventType.EndOfUtterance)
                     ResetSendingAudio(false);
 
                 if (currentResponse.AudioOut != null)
                     _audioOut.AddBytesToPlay(currentResponse.AudioOut.AudioData.ToByteArray());
 
-                if (currentResponse.Result != null)
+                if (currentResponse.DialogStateOut != null)
                 {
                     // if the assistant has recognised something, flag this so the failure notification isn't played
-                    if (!String.IsNullOrEmpty(currentResponse.Result.SpokenRequestText))
+                    if (!String.IsNullOrEmpty(currentResponse.DialogStateOut.SupplementalDisplayText))
                         _assistantResponseReceived = true;
 
-                    switch (currentResponse.Result.MicrophoneMode)
+                    switch (currentResponse.DialogStateOut.MicrophoneMode)
                     {
                         // this is the end of the current conversation
-                        case ConverseResult.Types.MicrophoneMode.CloseMicrophone:
+                        case DialogStateOut.Types.MicrophoneMode.CloseMicrophone:
                             StopRecording();
 
                             // play failure notification if nothing recognised.
@@ -207,7 +208,7 @@ namespace GoogleAssistantWindows
                                 OnAssistantStateChanged?.Invoke(AssistantState.Inactive);
                             }
                             break;
-                        case ConverseResult.Types.MicrophoneMode.DialogFollowOn:
+                        case DialogStateOut.Types.MicrophoneMode.DialogFollowOn:
                             // stop recording as the follow on is in a whole new conversation, so may as well restart the same flow
                             StopRecording();
                             _followOn = true;
@@ -257,15 +258,15 @@ namespace GoogleAssistantWindows
             }
         }
 
-        private string ResponseToOutput(ConverseResponse currentResponse)
+        private string ResponseToOutput(AssistResponse currentResponse)
         {
             if (currentResponse.AudioOut != null)
                 return $"Response - AudioOut {currentResponse.AudioOut.AudioData.Length}";
-            if (currentResponse.Error != null)
-                return $"Response - Error:{currentResponse.Error}";
-            if (currentResponse.Result != null)
-                return $"Response - Result:{currentResponse.Result}";
-            if (currentResponse.EventType != ConverseResponse.Types.EventType.Unspecified)
+            //if (currentResponse..Error != null)
+            //    return $"Response - Error:{currentResponse.Error}";
+            if (currentResponse.DialogStateOut != null)
+                return $"Response - Result:{currentResponse.DialogStateOut}";
+            if (currentResponse.EventType != AssistResponse.Types.EventType.Unspecified)
                 return $"Response - EventType:{currentResponse.EventType}";
 
             return "Response Empty?";
