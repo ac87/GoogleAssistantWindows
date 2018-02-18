@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Forms;
+using System.Windows.Media;
 
 namespace GoogleAssistantWindows
 {
@@ -21,8 +24,10 @@ namespace GoogleAssistantWindows
 
         private readonly AudioOut _audioOut;
 
-        private AssistantState _assistantState = AssistantState.Inactive;
+        private ScrollViewer listBoxOutputScrollViewer;
 
+        private AssistantState _assistantState = AssistantState.Inactive;
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -55,8 +60,8 @@ namespace GoogleAssistantWindows
             _assistant.OnAssistantStateChanged += OnAssistantStateChanged;
 
             _userManager = UserManager.Instance;
-            _userManager.OnUserUpdate += OnUserUpdate;            
-        }        
+            _userManager.OnUserUpdate += OnUserUpdate;
+        }
 
         protected override void OnStateChanged(EventArgs e)
         {
@@ -96,9 +101,12 @@ namespace GoogleAssistantWindows
         private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
         {
             if (Utils.HasTokenFile()) 
-                _userManager.GetOrRefreshCredential();     // we don't need to wait for this UserManager will throw an event on loaded.       
+                _userManager.GetOrRefreshCredential();     // we don't need to wait for this UserManager will throw an event on loaded.  
+
+            listBoxOutputScrollViewer = FindVisualChild<ScrollViewer>(ListBoxOutput);
+
         }
-       
+
         private void ButtonRecord_OnClick(object sender, RoutedEventArgs e)
         {
             StartListening();
@@ -130,7 +138,7 @@ namespace GoogleAssistantWindows
                     ListBoxOutput.Items.RemoveAt(0);
 
                 ListBoxOutput.Items.Add(output);
-                ListBoxOutput.ScrollIntoView(ListBoxOutput.Items[ListBoxOutput.Items.Count-1]);
+                listBoxOutputScrollViewer.ScrollToBottom(); // fix because ListBoxOutput.ScrollIntoView was not working reliable
 
                 if (output.StartsWith("Error") && Height == NormalHeight)
                     Height = DebugHeight;
@@ -143,5 +151,28 @@ namespace GoogleAssistantWindows
         {
             Height = (Height == NormalHeight ? DebugHeight : NormalHeight);
         }
+
+        private childItem FindVisualChild<childItem>(DependencyObject obj) where childItem : DependencyObject
+        {
+            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(obj); i++)
+            {
+                DependencyObject child = VisualTreeHelper.GetChild(obj, i);
+                if (child != null && child is childItem)
+                {
+                    return (childItem)child;
+                }
+                else
+                {
+                    childItem childOfChild = FindVisualChild <childItem>(child);
+                    if (childOfChild != null)
+                    {
+                        return childOfChild;
+                    }
+                }
+            }
+            return null;
+        }
+
+
     }
 }

@@ -1,5 +1,7 @@
 # Google Assistant Windows
 
+*Updated to support the Google Assistant alphav2 API*
+
 First attempt at getting the Google Assistant SDK in a C# WPF application. Created mostly on Windows having never used gRPC or OAuth before. Its not pretty but its marginally nicer than installing Python and using Google's example.
 
 Comprises of 
