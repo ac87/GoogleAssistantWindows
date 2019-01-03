@@ -9,7 +9,7 @@ Comprises of
 - Minimise to Tray 
 - Global Keyboard shortcut for activation - Ctrl+Alt+G
 
-!(Screenshot.png?raw=true)
+![screenshot](Screenshot.png)
 
 ## Building
 
