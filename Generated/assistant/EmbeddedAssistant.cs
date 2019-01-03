@@ -25,73 +25,93 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
             "Cjtnb29nbGUvYXNzaXN0YW50L2VtYmVkZGVkL3YxYWxwaGEyL2VtYmVkZGVk",
             "X2Fzc2lzdGFudC5wcm90bxIiZ29vZ2xlLmFzc2lzdGFudC5lbWJlZGRlZC52",
             "MWFscGhhMhocZ29vZ2xlL2FwaS9hbm5vdGF0aW9ucy5wcm90bxoYZ29vZ2xl",
-            "L3R5cGUvbGF0bG5nLnByb3RvIt0CCgxBc3Npc3RDb25maWcSTAoPYXVkaW9f",
-            "aW5fY29uZmlnGAEgASgLMjEuZ29vZ2xlLmFzc2lzdGFudC5lbWJlZGRlZC52",
-            "MWFscGhhMi5BdWRpb0luQ29uZmlnSAASFAoKdGV4dF9xdWVyeRgGIAEoCUgA",
-            "EkwKEGF1ZGlvX291dF9jb25maWcYAiABKAsyMi5nb29nbGUuYXNzaXN0YW50",
-            "LmVtYmVkZGVkLnYxYWxwaGEyLkF1ZGlvT3V0Q29uZmlnEkoKD2RpYWxvZ19z",
-            "dGF0ZV9pbhgDIAEoCzIxLmdvb2dsZS5hc3Npc3RhbnQuZW1iZWRkZWQudjFh",
-            "bHBoYTIuRGlhbG9nU3RhdGVJbhJHCg1kZXZpY2VfY29uZmlnGAQgASgLMjAu",
-            "Z29vZ2xlLmFzc2lzdGFudC5lbWJlZGRlZC52MWFscGhhMi5EZXZpY2VDb25m",
-            "aWdCBgoEdHlwZSK2AQoNQXVkaW9JbkNvbmZpZxJMCghlbmNvZGluZxgBIAEo",
-            "DjI6Lmdvb2dsZS5hc3Npc3RhbnQuZW1iZWRkZWQudjFhbHBoYTIuQXVkaW9J",
-            "bkNvbmZpZy5FbmNvZGluZxIZChFzYW1wbGVfcmF0ZV9oZXJ0ehgCIAEoBSI8",
-            "CghFbmNvZGluZxIYChRFTkNPRElOR19VTlNQRUNJRklFRBAAEgwKCExJTkVB",
-            "UjE2EAESCAoERkxBQxACIuMBCg5BdWRpb091dENvbmZpZxJNCghlbmNvZGlu",
-            "ZxgBIAEoDjI7Lmdvb2dsZS5hc3Npc3RhbnQuZW1iZWRkZWQudjFhbHBoYTIu",
-            "QXVkaW9PdXRDb25maWcuRW5jb2RpbmcSGQoRc2FtcGxlX3JhdGVfaGVydHoY",
-            "AiABKAUSGQoRdm9sdW1lX3BlcmNlbnRhZ2UYAyABKAUiTAoIRW5jb2RpbmcS",
-            "GAoURU5DT0RJTkdfVU5TUEVDSUZJRUQQABIMCghMSU5FQVIxNhABEgcKA01Q",
-            "MxACEg8KC09QVVNfSU5fT0dHEAMijwEKDURpYWxvZ1N0YXRlSW4SGgoSY29u",
-            "dmVyc2F0aW9uX3N0YXRlGAEgASgMEhUKDWxhbmd1YWdlX2NvZGUYAiABKAkS",
-            "SwoPZGV2aWNlX2xvY2F0aW9uGAUgASgLMjIuZ29vZ2xlLmFzc2lzdGFudC5l",
-            "bWJlZGRlZC52MWFscGhhMi5EZXZpY2VMb2NhdGlvbiIeCghBdWRpb091dBIS",
-            "CgphdWRpb19kYXRhGAEgASgMIqUCCg5EaWFsb2dTdGF0ZU91dBIhChlzdXBw",
-            "bGVtZW50YWxfZGlzcGxheV90ZXh0GAEgASgJEhoKEmNvbnZlcnNhdGlvbl9z",
-            "dGF0ZRgCIAEoDBJaCg9taWNyb3Bob25lX21vZGUYAyABKA4yQS5nb29nbGUu",
-            "YXNzaXN0YW50LmVtYmVkZGVkLnYxYWxwaGEyLkRpYWxvZ1N0YXRlT3V0Lk1p",
-            "Y3JvcGhvbmVNb2RlEhkKEXZvbHVtZV9wZXJjZW50YWdlGAQgASgFIl0KDk1p",
-            "Y3JvcGhvbmVNb2RlEh8KG01JQ1JPUEhPTkVfTU9ERV9VTlNQRUNJRklFRBAA",
-            "EhQKEENMT1NFX01JQ1JPUEhPTkUQARIUChBESUFMT0dfRk9MTE9XX09OEAIi",
-            "bwoNQXNzaXN0UmVxdWVzdBJCCgZjb25maWcYASABKAsyMC5nb29nbGUuYXNz",
-            "aXN0YW50LmVtYmVkZGVkLnYxYWxwaGEyLkFzc2lzdENvbmZpZ0gAEhIKCGF1",
-            "ZGlvX2luGAIgASgMSABCBgoEdHlwZSLOAwoOQXNzaXN0UmVzcG9uc2USUAoK",
-            "ZXZlbnRfdHlwZRgBIAEoDjI8Lmdvb2dsZS5hc3Npc3RhbnQuZW1iZWRkZWQu",
-            "djFhbHBoYTIuQXNzaXN0UmVzcG9uc2UuRXZlbnRUeXBlEj8KCWF1ZGlvX291",
-            "dBgDIAEoCzIsLmdvb2dsZS5hc3Npc3RhbnQuZW1iZWRkZWQudjFhbHBoYTIu",
-            "QXVkaW9PdXQSRwoNZGV2aWNlX2FjdGlvbhgGIAEoCzIwLmdvb2dsZS5hc3Np",
-            "c3RhbnQuZW1iZWRkZWQudjFhbHBoYTIuRGV2aWNlQWN0aW9uElMKDnNwZWVj",
-            "aF9yZXN1bHRzGAIgAygLMjsuZ29vZ2xlLmFzc2lzdGFudC5lbWJlZGRlZC52",
-            "MWFscGhhMi5TcGVlY2hSZWNvZ25pdGlvblJlc3VsdBJMChBkaWFsb2dfc3Rh",
-            "dGVfb3V0GAUgASgLMjIuZ29vZ2xlLmFzc2lzdGFudC5lbWJlZGRlZC52MWFs",
-            "cGhhMi5EaWFsb2dTdGF0ZU91dCI9CglFdmVudFR5cGUSGgoWRVZFTlRfVFlQ",
-            "RV9VTlNQRUNJRklFRBAAEhQKEEVORF9PRl9VVFRFUkFOQ0UQASJAChdTcGVl",
-            "Y2hSZWNvZ25pdGlvblJlc3VsdBISCgp0cmFuc2NyaXB0GAEgASgJEhEKCXN0",
-            "YWJpbGl0eRgCIAEoAiI6CgxEZXZpY2VDb25maWcSEQoJZGV2aWNlX2lkGAEg",
-            "ASgJEhcKD2RldmljZV9tb2RlbF9pZBgDIAEoCSIrCgxEZXZpY2VBY3Rpb24S",
-            "GwoTZGV2aWNlX3JlcXVlc3RfanNvbhgBIAEoCSJECg5EZXZpY2VMb2NhdGlv",
-            "bhIqCgtjb29yZGluYXRlcxgBIAEoCzITLmdvb2dsZS50eXBlLkxhdExuZ0gA",
-            "QgYKBHR5cGUyiAEKEUVtYmVkZGVkQXNzaXN0YW50EnMKBkFzc2lzdBIxLmdv",
-            "b2dsZS5hc3Npc3RhbnQuZW1iZWRkZWQudjFhbHBoYTIuQXNzaXN0UmVxdWVz",
-            "dBoyLmdvb2dsZS5hc3Npc3RhbnQuZW1iZWRkZWQudjFhbHBoYTIuQXNzaXN0",
-            "UmVzcG9uc2UoATABQoYBCiZjb20uZ29vZ2xlLmFzc2lzdGFudC5lbWJlZGRl",
-            "ZC52MWFscGhhMkIOQXNzaXN0YW50UHJvdG9QAVpKZ29vZ2xlLmdvbGFuZy5v",
-            "cmcvZ2VucHJvdG8vZ29vZ2xlYXBpcy9hc3Npc3RhbnQvZW1iZWRkZWQvdjFh",
-            "bHBoYTI7ZW1iZWRkZWRiBnByb3RvMw=="));
+            "L3R5cGUvbGF0bG5nLnByb3RvIm8KDUFzc2lzdFJlcXVlc3QSQgoGY29uZmln",
+            "GAEgASgLMjAuZ29vZ2xlLmFzc2lzdGFudC5lbWJlZGRlZC52MWFscGhhMi5B",
+            "c3Npc3RDb25maWdIABISCghhdWRpb19pbhgCIAEoDEgAQgYKBHR5cGUi1AQK",
+            "DkFzc2lzdFJlc3BvbnNlElAKCmV2ZW50X3R5cGUYASABKA4yPC5nb29nbGUu",
+            "YXNzaXN0YW50LmVtYmVkZGVkLnYxYWxwaGEyLkFzc2lzdFJlc3BvbnNlLkV2",
+            "ZW50VHlwZRI/CglhdWRpb19vdXQYAyABKAsyLC5nb29nbGUuYXNzaXN0YW50",
+            "LmVtYmVkZGVkLnYxYWxwaGEyLkF1ZGlvT3V0EkEKCnNjcmVlbl9vdXQYBCAB",
+            "KAsyLS5nb29nbGUuYXNzaXN0YW50LmVtYmVkZGVkLnYxYWxwaGEyLlNjcmVl",
+            "bk91dBJHCg1kZXZpY2VfYWN0aW9uGAYgASgLMjAuZ29vZ2xlLmFzc2lzdGFu",
+            "dC5lbWJlZGRlZC52MWFscGhhMi5EZXZpY2VBY3Rpb24SUwoOc3BlZWNoX3Jl",
+            "c3VsdHMYAiADKAsyOy5nb29nbGUuYXNzaXN0YW50LmVtYmVkZGVkLnYxYWxw",
+            "aGEyLlNwZWVjaFJlY29nbml0aW9uUmVzdWx0EkwKEGRpYWxvZ19zdGF0ZV9v",
+            "dXQYBSABKAsyMi5nb29nbGUuYXNzaXN0YW50LmVtYmVkZGVkLnYxYWxwaGEy",
+            "LkRpYWxvZ1N0YXRlT3V0EkEKCmRlYnVnX2luZm8YCCABKAsyLS5nb29nbGUu",
+            "YXNzaXN0YW50LmVtYmVkZGVkLnYxYWxwaGEyLkRlYnVnSW5mbyI9CglFdmVu",
+            "dFR5cGUSGgoWRVZFTlRfVFlQRV9VTlNQRUNJRklFRBAAEhQKEEVORF9PRl9V",
+            "VFRFUkFOQ0UQASIwCglEZWJ1Z0luZm8SIwobYW9nX2FnZW50X3RvX2Fzc2lz",
+            "dGFudF9qc29uGAEgASgJIvQDCgxBc3Npc3RDb25maWcSTAoPYXVkaW9faW5f",
+            "Y29uZmlnGAEgASgLMjEuZ29vZ2xlLmFzc2lzdGFudC5lbWJlZGRlZC52MWFs",
+            "cGhhMi5BdWRpb0luQ29uZmlnSAASFAoKdGV4dF9xdWVyeRgGIAEoCUgAEkwK",
+            "EGF1ZGlvX291dF9jb25maWcYAiABKAsyMi5nb29nbGUuYXNzaXN0YW50LmVt",
+            "YmVkZGVkLnYxYWxwaGEyLkF1ZGlvT3V0Q29uZmlnEk4KEXNjcmVlbl9vdXRf",
+            "Y29uZmlnGAggASgLMjMuZ29vZ2xlLmFzc2lzdGFudC5lbWJlZGRlZC52MWFs",
+            "cGhhMi5TY3JlZW5PdXRDb25maWcSSgoPZGlhbG9nX3N0YXRlX2luGAMgASgL",
+            "MjEuZ29vZ2xlLmFzc2lzdGFudC5lbWJlZGRlZC52MWFscGhhMi5EaWFsb2dT",
+            "dGF0ZUluEkcKDWRldmljZV9jb25maWcYBCABKAsyMC5nb29nbGUuYXNzaXN0",
+            "YW50LmVtYmVkZGVkLnYxYWxwaGEyLkRldmljZUNvbmZpZxJFCgxkZWJ1Z19j",
+            "b25maWcYBSABKAsyLy5nb29nbGUuYXNzaXN0YW50LmVtYmVkZGVkLnYxYWxw",
+            "aGEyLkRlYnVnQ29uZmlnQgYKBHR5cGUitgEKDUF1ZGlvSW5Db25maWcSTAoI",
+            "ZW5jb2RpbmcYASABKA4yOi5nb29nbGUuYXNzaXN0YW50LmVtYmVkZGVkLnYx",
+            "YWxwaGEyLkF1ZGlvSW5Db25maWcuRW5jb2RpbmcSGQoRc2FtcGxlX3JhdGVf",
+            "aGVydHoYAiABKAUiPAoIRW5jb2RpbmcSGAoURU5DT0RJTkdfVU5TUEVDSUZJ",
+            "RUQQABIMCghMSU5FQVIxNhABEggKBEZMQUMQAiLjAQoOQXVkaW9PdXRDb25m",
+            "aWcSTQoIZW5jb2RpbmcYASABKA4yOy5nb29nbGUuYXNzaXN0YW50LmVtYmVk",
+            "ZGVkLnYxYWxwaGEyLkF1ZGlvT3V0Q29uZmlnLkVuY29kaW5nEhkKEXNhbXBs",
+            "ZV9yYXRlX2hlcnR6GAIgASgFEhkKEXZvbHVtZV9wZXJjZW50YWdlGAMgASgF",
+            "IkwKCEVuY29kaW5nEhgKFEVOQ09ESU5HX1VOU1BFQ0lGSUVEEAASDAoITElO",
+            "RUFSMTYQARIHCgNNUDMQAhIPCgtPUFVTX0lOX09HRxADIqcBCg9TY3JlZW5P",
+            "dXRDb25maWcSUwoLc2NyZWVuX21vZGUYASABKA4yPi5nb29nbGUuYXNzaXN0",
+            "YW50LmVtYmVkZGVkLnYxYWxwaGEyLlNjcmVlbk91dENvbmZpZy5TY3JlZW5N",
+            "b2RlIj8KClNjcmVlbk1vZGUSGwoXU0NSRUVOX01PREVfVU5TUEVDSUZJRUQQ",
+            "ABIHCgNPRkYQARILCgdQTEFZSU5HEAMirAEKDURpYWxvZ1N0YXRlSW4SGgoS",
+            "Y29udmVyc2F0aW9uX3N0YXRlGAEgASgMEhUKDWxhbmd1YWdlX2NvZGUYAiAB",
+            "KAkSSwoPZGV2aWNlX2xvY2F0aW9uGAUgASgLMjIuZ29vZ2xlLmFzc2lzdGFu",
+            "dC5lbWJlZGRlZC52MWFscGhhMi5EZXZpY2VMb2NhdGlvbhIbChNpc19uZXdf",
+            "Y29udmVyc2F0aW9uGAcgASgIIjoKDERldmljZUNvbmZpZxIRCglkZXZpY2Vf",
+            "aWQYASABKAkSFwoPZGV2aWNlX21vZGVsX2lkGAMgASgJIh4KCEF1ZGlvT3V0",
+            "EhIKCmF1ZGlvX2RhdGEYASABKAwiiwEKCVNjcmVlbk91dBJECgZmb3JtYXQY",
+            "ASABKA4yNC5nb29nbGUuYXNzaXN0YW50LmVtYmVkZGVkLnYxYWxwaGEyLlNj",
+            "cmVlbk91dC5Gb3JtYXQSDAoEZGF0YRgCIAEoDCIqCgZGb3JtYXQSFgoSRk9S",
+            "TUFUX1VOU1BFQ0lGSUVEEAASCAoESFRNTBABIisKDERldmljZUFjdGlvbhIb",
+            "ChNkZXZpY2VfcmVxdWVzdF9qc29uGAEgASgJIkAKF1NwZWVjaFJlY29nbml0",
+            "aW9uUmVzdWx0EhIKCnRyYW5zY3JpcHQYASABKAkSEQoJc3RhYmlsaXR5GAIg",
+            "ASgCIqUCCg5EaWFsb2dTdGF0ZU91dBIhChlzdXBwbGVtZW50YWxfZGlzcGxh",
+            "eV90ZXh0GAEgASgJEhoKEmNvbnZlcnNhdGlvbl9zdGF0ZRgCIAEoDBJaCg9t",
+            "aWNyb3Bob25lX21vZGUYAyABKA4yQS5nb29nbGUuYXNzaXN0YW50LmVtYmVk",
+            "ZGVkLnYxYWxwaGEyLkRpYWxvZ1N0YXRlT3V0Lk1pY3JvcGhvbmVNb2RlEhkK",
+            "EXZvbHVtZV9wZXJjZW50YWdlGAQgASgFIl0KDk1pY3JvcGhvbmVNb2RlEh8K",
+            "G01JQ1JPUEhPTkVfTU9ERV9VTlNQRUNJRklFRBAAEhQKEENMT1NFX01JQ1JP",
+            "UEhPTkUQARIUChBESUFMT0dfRk9MTE9XX09OEAIiKAoLRGVidWdDb25maWcS",
+            "GQoRcmV0dXJuX2RlYnVnX2luZm8YBiABKAgiRAoORGV2aWNlTG9jYXRpb24S",
+            "KgoLY29vcmRpbmF0ZXMYASABKAsyEy5nb29nbGUudHlwZS5MYXRMbmdIAEIG",
+            "CgR0eXBlMogBChFFbWJlZGRlZEFzc2lzdGFudBJzCgZBc3Npc3QSMS5nb29n",
+            "bGUuYXNzaXN0YW50LmVtYmVkZGVkLnYxYWxwaGEyLkFzc2lzdFJlcXVlc3Qa",
+            "Mi5nb29nbGUuYXNzaXN0YW50LmVtYmVkZGVkLnYxYWxwaGEyLkFzc2lzdFJl",
+            "c3BvbnNlKAEwAUKPAQomY29tLmdvb2dsZS5hc3Npc3RhbnQuZW1iZWRkZWQu",
+            "djFhbHBoYTJCDkFzc2lzdGFudFByb3RvUAFaSmdvb2dsZS5nb2xhbmcub3Jn",
+            "L2dlbnByb3RvL2dvb2dsZWFwaXMvYXNzaXN0YW50L2VtYmVkZGVkL3YxYWxw",
+            "aGEyO2VtYmVkZGVkogIGQVNUU0RLYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Type.LatlngReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Assistant.Embedded.V1Alpha2.AssistConfig), global::Google.Assistant.Embedded.V1Alpha2.AssistConfig.Parser, new[]{ "AudioInConfig", "TextQuery", "AudioOutConfig", "DialogStateIn", "DeviceConfig" }, new[]{ "Type" }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Assistant.Embedded.V1Alpha2.AssistRequest), global::Google.Assistant.Embedded.V1Alpha2.AssistRequest.Parser, new[]{ "Config", "AudioIn" }, new[]{ "Type" }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Assistant.Embedded.V1Alpha2.AssistResponse), global::Google.Assistant.Embedded.V1Alpha2.AssistResponse.Parser, new[]{ "EventType", "AudioOut", "ScreenOut", "DeviceAction", "SpeechResults", "DialogStateOut", "DebugInfo" }, null, new[]{ typeof(global::Google.Assistant.Embedded.V1Alpha2.AssistResponse.Types.EventType) }, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Assistant.Embedded.V1Alpha2.DebugInfo), global::Google.Assistant.Embedded.V1Alpha2.DebugInfo.Parser, new[]{ "AogAgentToAssistantJson" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Assistant.Embedded.V1Alpha2.AssistConfig), global::Google.Assistant.Embedded.V1Alpha2.AssistConfig.Parser, new[]{ "AudioInConfig", "TextQuery", "AudioOutConfig", "ScreenOutConfig", "DialogStateIn", "DeviceConfig", "DebugConfig" }, new[]{ "Type" }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Assistant.Embedded.V1Alpha2.AudioInConfig), global::Google.Assistant.Embedded.V1Alpha2.AudioInConfig.Parser, new[]{ "Encoding", "SampleRateHertz" }, null, new[]{ typeof(global::Google.Assistant.Embedded.V1Alpha2.AudioInConfig.Types.Encoding) }, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Assistant.Embedded.V1Alpha2.AudioOutConfig), global::Google.Assistant.Embedded.V1Alpha2.AudioOutConfig.Parser, new[]{ "Encoding", "SampleRateHertz", "VolumePercentage" }, null, new[]{ typeof(global::Google.Assistant.Embedded.V1Alpha2.AudioOutConfig.Types.Encoding) }, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Assistant.Embedded.V1Alpha2.DialogStateIn), global::Google.Assistant.Embedded.V1Alpha2.DialogStateIn.Parser, new[]{ "ConversationState", "LanguageCode", "DeviceLocation" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Assistant.Embedded.V1Alpha2.AudioOut), global::Google.Assistant.Embedded.V1Alpha2.AudioOut.Parser, new[]{ "AudioData" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Assistant.Embedded.V1Alpha2.DialogStateOut), global::Google.Assistant.Embedded.V1Alpha2.DialogStateOut.Parser, new[]{ "SupplementalDisplayText", "ConversationState", "MicrophoneMode", "VolumePercentage" }, null, new[]{ typeof(global::Google.Assistant.Embedded.V1Alpha2.DialogStateOut.Types.MicrophoneMode) }, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Assistant.Embedded.V1Alpha2.AssistRequest), global::Google.Assistant.Embedded.V1Alpha2.AssistRequest.Parser, new[]{ "Config", "AudioIn" }, new[]{ "Type" }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Assistant.Embedded.V1Alpha2.AssistResponse), global::Google.Assistant.Embedded.V1Alpha2.AssistResponse.Parser, new[]{ "EventType", "AudioOut", "DeviceAction", "SpeechResults", "DialogStateOut" }, null, new[]{ typeof(global::Google.Assistant.Embedded.V1Alpha2.AssistResponse.Types.EventType) }, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Assistant.Embedded.V1Alpha2.SpeechRecognitionResult), global::Google.Assistant.Embedded.V1Alpha2.SpeechRecognitionResult.Parser, new[]{ "Transcript", "Stability" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Assistant.Embedded.V1Alpha2.ScreenOutConfig), global::Google.Assistant.Embedded.V1Alpha2.ScreenOutConfig.Parser, new[]{ "ScreenMode" }, null, new[]{ typeof(global::Google.Assistant.Embedded.V1Alpha2.ScreenOutConfig.Types.ScreenMode) }, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Assistant.Embedded.V1Alpha2.DialogStateIn), global::Google.Assistant.Embedded.V1Alpha2.DialogStateIn.Parser, new[]{ "ConversationState", "LanguageCode", "DeviceLocation", "IsNewConversation" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Assistant.Embedded.V1Alpha2.DeviceConfig), global::Google.Assistant.Embedded.V1Alpha2.DeviceConfig.Parser, new[]{ "DeviceId", "DeviceModelId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Assistant.Embedded.V1Alpha2.AudioOut), global::Google.Assistant.Embedded.V1Alpha2.AudioOut.Parser, new[]{ "AudioData" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Assistant.Embedded.V1Alpha2.ScreenOut), global::Google.Assistant.Embedded.V1Alpha2.ScreenOut.Parser, new[]{ "Format", "Data" }, null, new[]{ typeof(global::Google.Assistant.Embedded.V1Alpha2.ScreenOut.Types.Format) }, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Assistant.Embedded.V1Alpha2.DeviceAction), global::Google.Assistant.Embedded.V1Alpha2.DeviceAction.Parser, new[]{ "DeviceRequestJson" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Assistant.Embedded.V1Alpha2.SpeechRecognitionResult), global::Google.Assistant.Embedded.V1Alpha2.SpeechRecognitionResult.Parser, new[]{ "Transcript", "Stability" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Assistant.Embedded.V1Alpha2.DialogStateOut), global::Google.Assistant.Embedded.V1Alpha2.DialogStateOut.Parser, new[]{ "SupplementalDisplayText", "ConversationState", "MicrophoneMode", "VolumePercentage" }, null, new[]{ typeof(global::Google.Assistant.Embedded.V1Alpha2.DialogStateOut.Types.MicrophoneMode) }, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Assistant.Embedded.V1Alpha2.DebugConfig), global::Google.Assistant.Embedded.V1Alpha2.DebugConfig.Parser, new[]{ "ReturnDebugInfo" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Assistant.Embedded.V1Alpha2.DeviceLocation), global::Google.Assistant.Embedded.V1Alpha2.DeviceLocation.Parser, new[]{ "Coordinates" }, new[]{ "Type" }, null, null)
           }));
     }
@@ -99,6 +119,706 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
 
   }
   #region Messages
+  /// <summary>
+  /// The top-level message sent by the client. Clients must send at least two, and
+  /// typically numerous `AssistRequest` messages. The first message must
+  /// contain a `config` message and must not contain `audio_in` data. All
+  /// subsequent messages must contain `audio_in` data and must not contain a
+  /// `config` message.
+  /// </summary>
+  public sealed partial class AssistRequest : pb::IMessage<AssistRequest> {
+    private static readonly pb::MessageParser<AssistRequest> _parser = new pb::MessageParser<AssistRequest>(() => new AssistRequest());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<AssistRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AssistRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AssistRequest(AssistRequest other) : this() {
+      switch (other.TypeCase) {
+        case TypeOneofCase.Config:
+          Config = other.Config.Clone();
+          break;
+        case TypeOneofCase.AudioIn:
+          AudioIn = other.AudioIn;
+          break;
+      }
+
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AssistRequest Clone() {
+      return new AssistRequest(this);
+    }
+
+    /// <summary>Field number for the "config" field.</summary>
+    public const int ConfigFieldNumber = 1;
+    /// <summary>
+    /// The `config` message provides information to the recognizer that
+    /// specifies how to process the request.
+    /// The first `AssistRequest` message must contain a `config` message.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Assistant.Embedded.V1Alpha2.AssistConfig Config {
+      get { return typeCase_ == TypeOneofCase.Config ? (global::Google.Assistant.Embedded.V1Alpha2.AssistConfig) type_ : null; }
+      set {
+        type_ = value;
+        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.Config;
+      }
+    }
+
+    /// <summary>Field number for the "audio_in" field.</summary>
+    public const int AudioInFieldNumber = 2;
+    /// <summary>
+    /// The audio data to be recognized. Sequential chunks of audio data are sent
+    /// in sequential `AssistRequest` messages. The first `AssistRequest`
+    /// message must not contain `audio_in` data and all subsequent
+    /// `AssistRequest` messages must contain `audio_in` data. The audio bytes
+    /// must be encoded as specified in `AudioInConfig`.
+    /// Audio must be sent at approximately real-time (16000 samples per second).
+    /// An error will be returned if audio is sent significantly faster or
+    /// slower.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pb::ByteString AudioIn {
+      get { return typeCase_ == TypeOneofCase.AudioIn ? (pb::ByteString) type_ : pb::ByteString.Empty; }
+      set {
+        type_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        typeCase_ = TypeOneofCase.AudioIn;
+      }
+    }
+
+    private object type_;
+    /// <summary>Enum of possible cases for the "type" oneof.</summary>
+    public enum TypeOneofCase {
+      None = 0,
+      Config = 1,
+      AudioIn = 2,
+    }
+    private TypeOneofCase typeCase_ = TypeOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TypeOneofCase TypeCase {
+      get { return typeCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearType() {
+      typeCase_ = TypeOneofCase.None;
+      type_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as AssistRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(AssistRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Config, other.Config)) return false;
+      if (AudioIn != other.AudioIn) return false;
+      if (TypeCase != other.TypeCase) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (typeCase_ == TypeOneofCase.Config) hash ^= Config.GetHashCode();
+      if (typeCase_ == TypeOneofCase.AudioIn) hash ^= AudioIn.GetHashCode();
+      hash ^= (int) typeCase_;
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (typeCase_ == TypeOneofCase.Config) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Config);
+      }
+      if (typeCase_ == TypeOneofCase.AudioIn) {
+        output.WriteRawTag(18);
+        output.WriteBytes(AudioIn);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (typeCase_ == TypeOneofCase.Config) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Config);
+      }
+      if (typeCase_ == TypeOneofCase.AudioIn) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(AudioIn);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(AssistRequest other) {
+      if (other == null) {
+        return;
+      }
+      switch (other.TypeCase) {
+        case TypeOneofCase.Config:
+          if (Config == null) {
+            Config = new global::Google.Assistant.Embedded.V1Alpha2.AssistConfig();
+          }
+          Config.MergeFrom(other.Config);
+          break;
+        case TypeOneofCase.AudioIn:
+          AudioIn = other.AudioIn;
+          break;
+      }
+
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            global::Google.Assistant.Embedded.V1Alpha2.AssistConfig subBuilder = new global::Google.Assistant.Embedded.V1Alpha2.AssistConfig();
+            if (typeCase_ == TypeOneofCase.Config) {
+              subBuilder.MergeFrom(Config);
+            }
+            input.ReadMessage(subBuilder);
+            Config = subBuilder;
+            break;
+          }
+          case 18: {
+            AudioIn = input.ReadBytes();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  /// The top-level message received by the client. A series of one or more
+  /// `AssistResponse` messages are streamed back to the client.
+  /// </summary>
+  public sealed partial class AssistResponse : pb::IMessage<AssistResponse> {
+    private static readonly pb::MessageParser<AssistResponse> _parser = new pb::MessageParser<AssistResponse>(() => new AssistResponse());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<AssistResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AssistResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AssistResponse(AssistResponse other) : this() {
+      eventType_ = other.eventType_;
+      AudioOut = other.audioOut_ != null ? other.AudioOut.Clone() : null;
+      ScreenOut = other.screenOut_ != null ? other.ScreenOut.Clone() : null;
+      DeviceAction = other.deviceAction_ != null ? other.DeviceAction.Clone() : null;
+      speechResults_ = other.speechResults_.Clone();
+      DialogStateOut = other.dialogStateOut_ != null ? other.DialogStateOut.Clone() : null;
+      DebugInfo = other.debugInfo_ != null ? other.DebugInfo.Clone() : null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AssistResponse Clone() {
+      return new AssistResponse(this);
+    }
+
+    /// <summary>Field number for the "event_type" field.</summary>
+    public const int EventTypeFieldNumber = 1;
+    private global::Google.Assistant.Embedded.V1Alpha2.AssistResponse.Types.EventType eventType_ = 0;
+    /// <summary>
+    /// *Output-only* Indicates the type of event.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Assistant.Embedded.V1Alpha2.AssistResponse.Types.EventType EventType {
+      get { return eventType_; }
+      set {
+        eventType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "audio_out" field.</summary>
+    public const int AudioOutFieldNumber = 3;
+    private global::Google.Assistant.Embedded.V1Alpha2.AudioOut audioOut_;
+    /// <summary>
+    /// *Output-only* The audio containing the Assistant's response to the query.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Assistant.Embedded.V1Alpha2.AudioOut AudioOut {
+      get { return audioOut_; }
+      set {
+        audioOut_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "screen_out" field.</summary>
+    public const int ScreenOutFieldNumber = 4;
+    private global::Google.Assistant.Embedded.V1Alpha2.ScreenOut screenOut_;
+    /// <summary>
+    /// *Output-only* Contains the Assistant's visual response to the query.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Assistant.Embedded.V1Alpha2.ScreenOut ScreenOut {
+      get { return screenOut_; }
+      set {
+        screenOut_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "device_action" field.</summary>
+    public const int DeviceActionFieldNumber = 6;
+    private global::Google.Assistant.Embedded.V1Alpha2.DeviceAction deviceAction_;
+    /// <summary>
+    /// *Output-only* Contains the action triggered by the query with the
+    /// appropriate payloads and semantic parsing.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Assistant.Embedded.V1Alpha2.DeviceAction DeviceAction {
+      get { return deviceAction_; }
+      set {
+        deviceAction_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "speech_results" field.</summary>
+    public const int SpeechResultsFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::Google.Assistant.Embedded.V1Alpha2.SpeechRecognitionResult> _repeated_speechResults_codec
+        = pb::FieldCodec.ForMessage(18, global::Google.Assistant.Embedded.V1Alpha2.SpeechRecognitionResult.Parser);
+    private readonly pbc::RepeatedField<global::Google.Assistant.Embedded.V1Alpha2.SpeechRecognitionResult> speechResults_ = new pbc::RepeatedField<global::Google.Assistant.Embedded.V1Alpha2.SpeechRecognitionResult>();
+    /// <summary>
+    /// *Output-only* This repeated list contains zero or more speech recognition
+    /// results that correspond to consecutive portions of the audio currently
+    /// being processed, starting with the portion corresponding to the earliest
+    /// audio (and most stable portion) to the portion corresponding to the most
+    /// recent audio. The strings can be concatenated to view the full
+    /// in-progress response. When the speech recognition completes, this list
+    /// will contain one item with `stability` of `1.0`.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Google.Assistant.Embedded.V1Alpha2.SpeechRecognitionResult> SpeechResults {
+      get { return speechResults_; }
+    }
+
+    /// <summary>Field number for the "dialog_state_out" field.</summary>
+    public const int DialogStateOutFieldNumber = 5;
+    private global::Google.Assistant.Embedded.V1Alpha2.DialogStateOut dialogStateOut_;
+    /// <summary>
+    /// *Output-only* Contains output related to the user's query.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Assistant.Embedded.V1Alpha2.DialogStateOut DialogStateOut {
+      get { return dialogStateOut_; }
+      set {
+        dialogStateOut_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "debug_info" field.</summary>
+    public const int DebugInfoFieldNumber = 8;
+    private global::Google.Assistant.Embedded.V1Alpha2.DebugInfo debugInfo_;
+    /// <summary>
+    /// *Output-only* Debugging info for developer. Only returned if request set
+    /// `return_debug_info` to true.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Assistant.Embedded.V1Alpha2.DebugInfo DebugInfo {
+      get { return debugInfo_; }
+      set {
+        debugInfo_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as AssistResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(AssistResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (EventType != other.EventType) return false;
+      if (!object.Equals(AudioOut, other.AudioOut)) return false;
+      if (!object.Equals(ScreenOut, other.ScreenOut)) return false;
+      if (!object.Equals(DeviceAction, other.DeviceAction)) return false;
+      if(!speechResults_.Equals(other.speechResults_)) return false;
+      if (!object.Equals(DialogStateOut, other.DialogStateOut)) return false;
+      if (!object.Equals(DebugInfo, other.DebugInfo)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (EventType != 0) hash ^= EventType.GetHashCode();
+      if (audioOut_ != null) hash ^= AudioOut.GetHashCode();
+      if (screenOut_ != null) hash ^= ScreenOut.GetHashCode();
+      if (deviceAction_ != null) hash ^= DeviceAction.GetHashCode();
+      hash ^= speechResults_.GetHashCode();
+      if (dialogStateOut_ != null) hash ^= DialogStateOut.GetHashCode();
+      if (debugInfo_ != null) hash ^= DebugInfo.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (EventType != 0) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) EventType);
+      }
+      speechResults_.WriteTo(output, _repeated_speechResults_codec);
+      if (audioOut_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(AudioOut);
+      }
+      if (screenOut_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(ScreenOut);
+      }
+      if (dialogStateOut_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(DialogStateOut);
+      }
+      if (deviceAction_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(DeviceAction);
+      }
+      if (debugInfo_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(DebugInfo);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (EventType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) EventType);
+      }
+      if (audioOut_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AudioOut);
+      }
+      if (screenOut_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ScreenOut);
+      }
+      if (deviceAction_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DeviceAction);
+      }
+      size += speechResults_.CalculateSize(_repeated_speechResults_codec);
+      if (dialogStateOut_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DialogStateOut);
+      }
+      if (debugInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DebugInfo);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(AssistResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.EventType != 0) {
+        EventType = other.EventType;
+      }
+      if (other.audioOut_ != null) {
+        if (audioOut_ == null) {
+          audioOut_ = new global::Google.Assistant.Embedded.V1Alpha2.AudioOut();
+        }
+        AudioOut.MergeFrom(other.AudioOut);
+      }
+      if (other.screenOut_ != null) {
+        if (screenOut_ == null) {
+          screenOut_ = new global::Google.Assistant.Embedded.V1Alpha2.ScreenOut();
+        }
+        ScreenOut.MergeFrom(other.ScreenOut);
+      }
+      if (other.deviceAction_ != null) {
+        if (deviceAction_ == null) {
+          deviceAction_ = new global::Google.Assistant.Embedded.V1Alpha2.DeviceAction();
+        }
+        DeviceAction.MergeFrom(other.DeviceAction);
+      }
+      speechResults_.Add(other.speechResults_);
+      if (other.dialogStateOut_ != null) {
+        if (dialogStateOut_ == null) {
+          dialogStateOut_ = new global::Google.Assistant.Embedded.V1Alpha2.DialogStateOut();
+        }
+        DialogStateOut.MergeFrom(other.DialogStateOut);
+      }
+      if (other.debugInfo_ != null) {
+        if (debugInfo_ == null) {
+          debugInfo_ = new global::Google.Assistant.Embedded.V1Alpha2.DebugInfo();
+        }
+        DebugInfo.MergeFrom(other.DebugInfo);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            eventType_ = (global::Google.Assistant.Embedded.V1Alpha2.AssistResponse.Types.EventType) input.ReadEnum();
+            break;
+          }
+          case 18: {
+            speechResults_.AddEntriesFrom(input, _repeated_speechResults_codec);
+            break;
+          }
+          case 26: {
+            if (audioOut_ == null) {
+              audioOut_ = new global::Google.Assistant.Embedded.V1Alpha2.AudioOut();
+            }
+            input.ReadMessage(audioOut_);
+            break;
+          }
+          case 34: {
+            if (screenOut_ == null) {
+              screenOut_ = new global::Google.Assistant.Embedded.V1Alpha2.ScreenOut();
+            }
+            input.ReadMessage(screenOut_);
+            break;
+          }
+          case 42: {
+            if (dialogStateOut_ == null) {
+              dialogStateOut_ = new global::Google.Assistant.Embedded.V1Alpha2.DialogStateOut();
+            }
+            input.ReadMessage(dialogStateOut_);
+            break;
+          }
+          case 50: {
+            if (deviceAction_ == null) {
+              deviceAction_ = new global::Google.Assistant.Embedded.V1Alpha2.DeviceAction();
+            }
+            input.ReadMessage(deviceAction_);
+            break;
+          }
+          case 66: {
+            if (debugInfo_ == null) {
+              debugInfo_ = new global::Google.Assistant.Embedded.V1Alpha2.DebugInfo();
+            }
+            input.ReadMessage(debugInfo_);
+            break;
+          }
+        }
+      }
+    }
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the AssistResponse message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static partial class Types {
+      /// <summary>
+      /// Indicates the type of event.
+      /// </summary>
+      public enum EventType {
+        /// <summary>
+        /// No event specified.
+        /// </summary>
+        [pbr::OriginalName("EVENT_TYPE_UNSPECIFIED")] Unspecified = 0,
+        /// <summary>
+        /// This event indicates that the server has detected the end of the user's
+        /// speech utterance and expects no additional speech. Therefore, the server
+        /// will not process additional audio (although it may subsequently return
+        /// additional results). The client should stop sending additional audio
+        /// data, half-close the gRPC connection, and wait for any additional results
+        /// until the server closes the gRPC connection.
+        /// </summary>
+        [pbr::OriginalName("END_OF_UTTERANCE")] EndOfUtterance = 1,
+      }
+
+    }
+    #endregion
+
+  }
+
+  /// <summary>
+  /// Debug info for developer. Only returned if request set `return_debug_info`
+  /// to true.
+  /// </summary>
+  public sealed partial class DebugInfo : pb::IMessage<DebugInfo> {
+    private static readonly pb::MessageParser<DebugInfo> _parser = new pb::MessageParser<DebugInfo>(() => new DebugInfo());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DebugInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DebugInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DebugInfo(DebugInfo other) : this() {
+      aogAgentToAssistantJson_ = other.aogAgentToAssistantJson_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DebugInfo Clone() {
+      return new DebugInfo(this);
+    }
+
+    /// <summary>Field number for the "aog_agent_to_assistant_json" field.</summary>
+    public const int AogAgentToAssistantJsonFieldNumber = 1;
+    private string aogAgentToAssistantJson_ = "";
+    /// <summary>
+    /// The original JSON response from an Action-on-Google agent to Google server.
+    /// See
+    /// https://developers.google.com/actions/reference/rest/Shared.Types/AppResponse.
+    /// It will only be populated if the request maker owns the AoG project and the
+    /// AoG project is in preview mode.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string AogAgentToAssistantJson {
+      get { return aogAgentToAssistantJson_; }
+      set {
+        aogAgentToAssistantJson_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DebugInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DebugInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (AogAgentToAssistantJson != other.AogAgentToAssistantJson) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (AogAgentToAssistantJson.Length != 0) hash ^= AogAgentToAssistantJson.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (AogAgentToAssistantJson.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(AogAgentToAssistantJson);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (AogAgentToAssistantJson.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(AogAgentToAssistantJson);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DebugInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.AogAgentToAssistantJson.Length != 0) {
+        AogAgentToAssistantJson = other.AogAgentToAssistantJson;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            AogAgentToAssistantJson = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   /// <summary>
   /// Specifies how to process the `AssistRequest` messages.
   /// </summary>
@@ -109,7 +829,7 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,8 +847,10 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public AssistConfig(AssistConfig other) : this() {
       AudioOutConfig = other.audioOutConfig_ != null ? other.AudioOutConfig.Clone() : null;
+      ScreenOutConfig = other.screenOutConfig_ != null ? other.ScreenOutConfig.Clone() : null;
       DialogStateIn = other.dialogStateIn_ != null ? other.DialogStateIn.Clone() : null;
       DeviceConfig = other.deviceConfig_ != null ? other.DeviceConfig.Clone() : null;
+      DebugConfig = other.debugConfig_ != null ? other.DebugConfig.Clone() : null;
       switch (other.TypeCase) {
         case TypeOneofCase.AudioInConfig:
           AudioInConfig = other.AudioInConfig.Clone();
@@ -189,6 +911,21 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
       }
     }
 
+    /// <summary>Field number for the "screen_out_config" field.</summary>
+    public const int ScreenOutConfigFieldNumber = 8;
+    private global::Google.Assistant.Embedded.V1Alpha2.ScreenOutConfig screenOutConfig_;
+    /// <summary>
+    /// *Optional* Specifies the desired format to use when server returns a
+    /// visual screen response.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Assistant.Embedded.V1Alpha2.ScreenOutConfig ScreenOutConfig {
+      get { return screenOutConfig_; }
+      set {
+        screenOutConfig_ = value;
+      }
+    }
+
     /// <summary>Field number for the "dialog_state_in" field.</summary>
     public const int DialogStateInFieldNumber = 3;
     private global::Google.Assistant.Embedded.V1Alpha2.DialogStateIn dialogStateIn_;
@@ -214,6 +951,20 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
       get { return deviceConfig_; }
       set {
         deviceConfig_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "debug_config" field.</summary>
+    public const int DebugConfigFieldNumber = 5;
+    private global::Google.Assistant.Embedded.V1Alpha2.DebugConfig debugConfig_;
+    /// <summary>
+    /// *Optional* Debugging parameters for the whole `Assist` RPC.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Assistant.Embedded.V1Alpha2.DebugConfig DebugConfig {
+      get { return debugConfig_; }
+      set {
+        debugConfig_ = value;
       }
     }
 
@@ -252,8 +1003,10 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
       if (!object.Equals(AudioInConfig, other.AudioInConfig)) return false;
       if (TextQuery != other.TextQuery) return false;
       if (!object.Equals(AudioOutConfig, other.AudioOutConfig)) return false;
+      if (!object.Equals(ScreenOutConfig, other.ScreenOutConfig)) return false;
       if (!object.Equals(DialogStateIn, other.DialogStateIn)) return false;
       if (!object.Equals(DeviceConfig, other.DeviceConfig)) return false;
+      if (!object.Equals(DebugConfig, other.DebugConfig)) return false;
       if (TypeCase != other.TypeCase) return false;
       return true;
     }
@@ -264,8 +1017,10 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
       if (typeCase_ == TypeOneofCase.AudioInConfig) hash ^= AudioInConfig.GetHashCode();
       if (typeCase_ == TypeOneofCase.TextQuery) hash ^= TextQuery.GetHashCode();
       if (audioOutConfig_ != null) hash ^= AudioOutConfig.GetHashCode();
+      if (screenOutConfig_ != null) hash ^= ScreenOutConfig.GetHashCode();
       if (dialogStateIn_ != null) hash ^= DialogStateIn.GetHashCode();
       if (deviceConfig_ != null) hash ^= DeviceConfig.GetHashCode();
+      if (debugConfig_ != null) hash ^= DebugConfig.GetHashCode();
       hash ^= (int) typeCase_;
       return hash;
     }
@@ -293,9 +1048,17 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
         output.WriteRawTag(34);
         output.WriteMessage(DeviceConfig);
       }
+      if (debugConfig_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(DebugConfig);
+      }
       if (typeCase_ == TypeOneofCase.TextQuery) {
         output.WriteRawTag(50);
         output.WriteString(TextQuery);
+      }
+      if (screenOutConfig_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(ScreenOutConfig);
       }
     }
 
@@ -311,11 +1074,17 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
       if (audioOutConfig_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(AudioOutConfig);
       }
+      if (screenOutConfig_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ScreenOutConfig);
+      }
       if (dialogStateIn_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(DialogStateIn);
       }
       if (deviceConfig_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(DeviceConfig);
+      }
+      if (debugConfig_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DebugConfig);
       }
       return size;
     }
@@ -331,6 +1100,12 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
         }
         AudioOutConfig.MergeFrom(other.AudioOutConfig);
       }
+      if (other.screenOutConfig_ != null) {
+        if (screenOutConfig_ == null) {
+          screenOutConfig_ = new global::Google.Assistant.Embedded.V1Alpha2.ScreenOutConfig();
+        }
+        ScreenOutConfig.MergeFrom(other.ScreenOutConfig);
+      }
       if (other.dialogStateIn_ != null) {
         if (dialogStateIn_ == null) {
           dialogStateIn_ = new global::Google.Assistant.Embedded.V1Alpha2.DialogStateIn();
@@ -342,6 +1117,12 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
           deviceConfig_ = new global::Google.Assistant.Embedded.V1Alpha2.DeviceConfig();
         }
         DeviceConfig.MergeFrom(other.DeviceConfig);
+      }
+      if (other.debugConfig_ != null) {
+        if (debugConfig_ == null) {
+          debugConfig_ = new global::Google.Assistant.Embedded.V1Alpha2.DebugConfig();
+        }
+        DebugConfig.MergeFrom(other.DebugConfig);
       }
       switch (other.TypeCase) {
         case TypeOneofCase.AudioInConfig:
@@ -395,8 +1176,22 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
             input.ReadMessage(deviceConfig_);
             break;
           }
+          case 42: {
+            if (debugConfig_ == null) {
+              debugConfig_ = new global::Google.Assistant.Embedded.V1Alpha2.DebugConfig();
+            }
+            input.ReadMessage(debugConfig_);
+            break;
+          }
           case 50: {
             TextQuery = input.ReadString();
+            break;
+          }
+          case 66: {
+            if (screenOutConfig_ == null) {
+              screenOutConfig_ = new global::Google.Assistant.Embedded.V1Alpha2.ScreenOutConfig();
+            }
+            input.ReadMessage(screenOutConfig_);
             break;
           }
         }
@@ -417,7 +1212,7 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -569,7 +1364,7 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
     public static partial class Types {
       /// <summary>
       /// Audio encoding of the data sent in the audio message.
-      /// Audio must be one-channel (mono). The only language supported is "en-US".
+      /// Audio must be one-channel (mono).
       /// </summary>
       public enum Encoding {
         /// <summary>
@@ -609,7 +1404,7 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -821,6 +1616,159 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
   }
 
   /// <summary>
+  /// Specifies the desired format for the server to use when it returns
+  /// `screen_out` response.
+  /// </summary>
+  public sealed partial class ScreenOutConfig : pb::IMessage<ScreenOutConfig> {
+    private static readonly pb::MessageParser<ScreenOutConfig> _parser = new pb::MessageParser<ScreenOutConfig>(() => new ScreenOutConfig());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ScreenOutConfig> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ScreenOutConfig() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ScreenOutConfig(ScreenOutConfig other) : this() {
+      screenMode_ = other.screenMode_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ScreenOutConfig Clone() {
+      return new ScreenOutConfig(this);
+    }
+
+    /// <summary>Field number for the "screen_mode" field.</summary>
+    public const int ScreenModeFieldNumber = 1;
+    private global::Google.Assistant.Embedded.V1Alpha2.ScreenOutConfig.Types.ScreenMode screenMode_ = 0;
+    /// <summary>
+    /// Current visual screen-mode for the device while issuing the query.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Assistant.Embedded.V1Alpha2.ScreenOutConfig.Types.ScreenMode ScreenMode {
+      get { return screenMode_; }
+      set {
+        screenMode_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ScreenOutConfig);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ScreenOutConfig other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ScreenMode != other.ScreenMode) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ScreenMode != 0) hash ^= ScreenMode.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ScreenMode != 0) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) ScreenMode);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ScreenMode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ScreenMode);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ScreenOutConfig other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ScreenMode != 0) {
+        ScreenMode = other.ScreenMode;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            screenMode_ = (global::Google.Assistant.Embedded.V1Alpha2.ScreenOutConfig.Types.ScreenMode) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the ScreenOutConfig message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static partial class Types {
+      /// <summary>
+      /// Possible modes for visual screen-output on the device.
+      /// </summary>
+      public enum ScreenMode {
+        /// <summary>
+        /// No video mode specified.
+        /// The Assistant may respond as if in `OFF` mode.
+        /// </summary>
+        [pbr::OriginalName("SCREEN_MODE_UNSPECIFIED")] Unspecified = 0,
+        /// <summary>
+        /// Screen is off (or has brightness or other settings set so low it is
+        /// not visible). The Assistant will typically not return a screen response
+        /// in this mode.
+        /// </summary>
+        [pbr::OriginalName("OFF")] Off = 1,
+        /// <summary>
+        /// The Assistant will typically return a partial-screen response in this
+        /// mode.
+        /// </summary>
+        [pbr::OriginalName("PLAYING")] Playing = 3,
+      }
+
+    }
+    #endregion
+
+  }
+
+  /// <summary>
   /// Provides information about the current dialog state.
   /// </summary>
   public sealed partial class DialogStateIn : pb::IMessage<DialogStateIn> {
@@ -830,7 +1778,7 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -850,6 +1798,7 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
       conversationState_ = other.conversationState_;
       languageCode_ = other.languageCode_;
       DeviceLocation = other.deviceLocation_ != null ? other.DeviceLocation.Clone() : null;
+      isNewConversation_ = other.isNewConversation_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -880,9 +1829,10 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
     private string languageCode_ = "";
     /// <summary>
     /// *Required* Language of the request in
-    /// [IETF BCP 47 syntax](https://tools.ietf.org/html/bcp47). For example:
-    /// "en-US". If you have selected a language for this `device_id` using the
-    /// [Settings](https://developers.google.com/assistant/sdk/guides/assistant-settings)
+    /// [IETF BCP 47 syntax](https://tools.ietf.org/html/bcp47) (for example,
+    /// "en-US"). See [Language Support](https://developers.google.com/assistant/sdk/reference/rpc/languages)
+    /// for more information. If you have selected a language for this `device_id`
+    /// using the [Settings](https://developers.google.com/assistant/sdk/reference/assistant-app/assistant-settings)
     /// menu in your phone's Google Assistant app, that selection will override
     /// this value.
     /// </summary>
@@ -908,6 +1858,23 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
       }
     }
 
+    /// <summary>Field number for the "is_new_conversation" field.</summary>
+    public const int IsNewConversationFieldNumber = 7;
+    private bool isNewConversation_;
+    /// <summary>
+    /// *Optional* If true, the server will treat the request as a new conversation
+    /// and not use state from the prior request. Set this field to true when the
+    /// conversation should be restarted, such as after a device reboot, or after a
+    /// significant lapse of time since the prior query.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsNewConversation {
+      get { return isNewConversation_; }
+      set {
+        isNewConversation_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as DialogStateIn);
@@ -924,6 +1891,7 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
       if (ConversationState != other.ConversationState) return false;
       if (LanguageCode != other.LanguageCode) return false;
       if (!object.Equals(DeviceLocation, other.DeviceLocation)) return false;
+      if (IsNewConversation != other.IsNewConversation) return false;
       return true;
     }
 
@@ -933,6 +1901,7 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
       if (ConversationState.Length != 0) hash ^= ConversationState.GetHashCode();
       if (LanguageCode.Length != 0) hash ^= LanguageCode.GetHashCode();
       if (deviceLocation_ != null) hash ^= DeviceLocation.GetHashCode();
+      if (IsNewConversation != false) hash ^= IsNewConversation.GetHashCode();
       return hash;
     }
 
@@ -955,6 +1924,10 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
         output.WriteRawTag(42);
         output.WriteMessage(DeviceLocation);
       }
+      if (IsNewConversation != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(IsNewConversation);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -968,6 +1941,9 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
       }
       if (deviceLocation_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(DeviceLocation);
+      }
+      if (IsNewConversation != false) {
+        size += 1 + 1;
       }
       return size;
     }
@@ -988,6 +1964,9 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
           deviceLocation_ = new global::Google.Assistant.Embedded.V1Alpha2.DeviceLocation();
         }
         DeviceLocation.MergeFrom(other.DeviceLocation);
+      }
+      if (other.IsNewConversation != false) {
+        IsNewConversation = other.IsNewConversation;
       }
     }
 
@@ -1014,6 +1993,181 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
             input.ReadMessage(deviceLocation_);
             break;
           }
+          case 56: {
+            IsNewConversation = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  /// *Required* Fields that identify the device to the Assistant.
+  ///
+  /// See also:
+  ///
+  /// *   [Register a Device - REST
+  /// API](https://developers.google.com/assistant/sdk/reference/device-registration/register-device-manual)
+  /// *   [Device Model and Instance
+  /// Schemas](https://developers.google.com/assistant/sdk/reference/device-registration/model-and-instance-schemas)
+  /// *   [Device
+  /// Proto](https://developers.google.com/assistant/sdk/reference/rpc/google.assistant.devices.v1alpha2#device)
+  /// </summary>
+  public sealed partial class DeviceConfig : pb::IMessage<DeviceConfig> {
+    private static readonly pb::MessageParser<DeviceConfig> _parser = new pb::MessageParser<DeviceConfig>(() => new DeviceConfig());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DeviceConfig> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[8]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeviceConfig() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeviceConfig(DeviceConfig other) : this() {
+      deviceId_ = other.deviceId_;
+      deviceModelId_ = other.deviceModelId_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeviceConfig Clone() {
+      return new DeviceConfig(this);
+    }
+
+    /// <summary>Field number for the "device_id" field.</summary>
+    public const int DeviceIdFieldNumber = 1;
+    private string deviceId_ = "";
+    /// <summary>
+    /// *Required* Unique identifier for the device. The id length must be 128
+    /// characters or less. Example: DBCDW098234. This MUST match the device_id
+    /// returned from device registration. This device_id is used to match against
+    /// the user's registered devices to lookup the supported traits and
+    /// capabilities of this device. This information should not change across
+    /// device reboots. However, it should not be saved across
+    /// factory-default resets.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string DeviceId {
+      get { return deviceId_; }
+      set {
+        deviceId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "device_model_id" field.</summary>
+    public const int DeviceModelIdFieldNumber = 3;
+    private string deviceModelId_ = "";
+    /// <summary>
+    /// *Required* Unique identifier for the device model. The combination of
+    /// device_model_id and device_id must have been previously associated through
+    /// device registration.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string DeviceModelId {
+      get { return deviceModelId_; }
+      set {
+        deviceModelId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DeviceConfig);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DeviceConfig other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (DeviceId != other.DeviceId) return false;
+      if (DeviceModelId != other.DeviceModelId) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (DeviceId.Length != 0) hash ^= DeviceId.GetHashCode();
+      if (DeviceModelId.Length != 0) hash ^= DeviceModelId.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (DeviceId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(DeviceId);
+      }
+      if (DeviceModelId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(DeviceModelId);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (DeviceId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceId);
+      }
+      if (DeviceModelId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceModelId);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DeviceConfig other) {
+      if (other == null) {
+        return;
+      }
+      if (other.DeviceId.Length != 0) {
+        DeviceId = other.DeviceId;
+      }
+      if (other.DeviceModelId.Length != 0) {
+        DeviceModelId = other.DeviceModelId;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            DeviceId = input.ReadString();
+            break;
+          }
+          case 26: {
+            DeviceModelId = input.ReadString();
+            break;
+          }
         }
       }
     }
@@ -1031,7 +2185,7 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1147,6 +2301,473 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
   }
 
   /// <summary>
+  /// The Assistant's visual output response to query. Enabled by
+  /// `screen_out_config`.
+  /// </summary>
+  public sealed partial class ScreenOut : pb::IMessage<ScreenOut> {
+    private static readonly pb::MessageParser<ScreenOut> _parser = new pb::MessageParser<ScreenOut>(() => new ScreenOut());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ScreenOut> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[10]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ScreenOut() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ScreenOut(ScreenOut other) : this() {
+      format_ = other.format_;
+      data_ = other.data_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ScreenOut Clone() {
+      return new ScreenOut(this);
+    }
+
+    /// <summary>Field number for the "format" field.</summary>
+    public const int FormatFieldNumber = 1;
+    private global::Google.Assistant.Embedded.V1Alpha2.ScreenOut.Types.Format format_ = 0;
+    /// <summary>
+    /// *Output-only* The format of the provided screen data.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Assistant.Embedded.V1Alpha2.ScreenOut.Types.Format Format {
+      get { return format_; }
+      set {
+        format_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "data" field.</summary>
+    public const int DataFieldNumber = 2;
+    private pb::ByteString data_ = pb::ByteString.Empty;
+    /// <summary>
+    /// *Output-only* The raw screen data to be displayed as the result of the
+    /// Assistant query.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pb::ByteString Data {
+      get { return data_; }
+      set {
+        data_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ScreenOut);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ScreenOut other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Format != other.Format) return false;
+      if (Data != other.Data) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Format != 0) hash ^= Format.GetHashCode();
+      if (Data.Length != 0) hash ^= Data.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Format != 0) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Format);
+      }
+      if (Data.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteBytes(Data);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Format != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Format);
+      }
+      if (Data.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Data);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ScreenOut other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Format != 0) {
+        Format = other.Format;
+      }
+      if (other.Data.Length != 0) {
+        Data = other.Data;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            format_ = (global::Google.Assistant.Embedded.V1Alpha2.ScreenOut.Types.Format) input.ReadEnum();
+            break;
+          }
+          case 18: {
+            Data = input.ReadBytes();
+            break;
+          }
+        }
+      }
+    }
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the ScreenOut message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static partial class Types {
+      /// <summary>
+      /// Possible formats of the screen data.
+      /// </summary>
+      public enum Format {
+        /// <summary>
+        /// No format specified.
+        /// </summary>
+        [pbr::OriginalName("FORMAT_UNSPECIFIED")] Unspecified = 0,
+        /// <summary>
+        /// Data will contain a fully-formed HTML5 layout encoded in UTF-8, e.g.
+        /// `&lt;html>&lt;body>&lt;div>...&lt;/div>&lt;/body>&lt;/html>`. It is intended to be rendered
+        /// along with the audio response. Note that HTML5 doctype should be included
+        /// in the actual HTML data.
+        /// </summary>
+        [pbr::OriginalName("HTML")] Html = 1,
+      }
+
+    }
+    #endregion
+
+  }
+
+  /// <summary>
+  /// The response returned to the device if the user has triggered a Device
+  /// Action. For example, a device which supports the query *Turn on the light*
+  /// would receive a `DeviceAction` with a JSON payload containing the semantics
+  /// of the request.
+  /// </summary>
+  public sealed partial class DeviceAction : pb::IMessage<DeviceAction> {
+    private static readonly pb::MessageParser<DeviceAction> _parser = new pb::MessageParser<DeviceAction>(() => new DeviceAction());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DeviceAction> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[11]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeviceAction() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeviceAction(DeviceAction other) : this() {
+      deviceRequestJson_ = other.deviceRequestJson_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeviceAction Clone() {
+      return new DeviceAction(this);
+    }
+
+    /// <summary>Field number for the "device_request_json" field.</summary>
+    public const int DeviceRequestJsonFieldNumber = 1;
+    private string deviceRequestJson_ = "";
+    /// <summary>
+    /// JSON containing the device command response generated from the triggered
+    /// Device Action grammar. The format is given by the
+    /// `action.devices.EXECUTE` intent for a given
+    /// [trait](https://developers.google.com/assistant/sdk/reference/traits/).
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string DeviceRequestJson {
+      get { return deviceRequestJson_; }
+      set {
+        deviceRequestJson_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DeviceAction);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DeviceAction other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (DeviceRequestJson != other.DeviceRequestJson) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (DeviceRequestJson.Length != 0) hash ^= DeviceRequestJson.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (DeviceRequestJson.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(DeviceRequestJson);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (DeviceRequestJson.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceRequestJson);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DeviceAction other) {
+      if (other == null) {
+        return;
+      }
+      if (other.DeviceRequestJson.Length != 0) {
+        DeviceRequestJson = other.DeviceRequestJson;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            DeviceRequestJson = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  /// The estimated transcription of a phrase the user has spoken. This could be
+  /// a single segment or the full guess of the user's spoken query.
+  /// </summary>
+  public sealed partial class SpeechRecognitionResult : pb::IMessage<SpeechRecognitionResult> {
+    private static readonly pb::MessageParser<SpeechRecognitionResult> _parser = new pb::MessageParser<SpeechRecognitionResult>(() => new SpeechRecognitionResult());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SpeechRecognitionResult> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[12]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SpeechRecognitionResult() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SpeechRecognitionResult(SpeechRecognitionResult other) : this() {
+      transcript_ = other.transcript_;
+      stability_ = other.stability_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SpeechRecognitionResult Clone() {
+      return new SpeechRecognitionResult(this);
+    }
+
+    /// <summary>Field number for the "transcript" field.</summary>
+    public const int TranscriptFieldNumber = 1;
+    private string transcript_ = "";
+    /// <summary>
+    /// *Output-only* Transcript text representing the words that the user spoke.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Transcript {
+      get { return transcript_; }
+      set {
+        transcript_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "stability" field.</summary>
+    public const int StabilityFieldNumber = 2;
+    private float stability_;
+    /// <summary>
+    /// *Output-only* An estimate of the likelihood that the Assistant will not
+    /// change its guess about this result. Values range from 0.0 (completely
+    /// unstable) to 1.0 (completely stable and final). The default of 0.0 is a
+    /// sentinel value indicating `stability` was not set.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Stability {
+      get { return stability_; }
+      set {
+        stability_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SpeechRecognitionResult);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SpeechRecognitionResult other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Transcript != other.Transcript) return false;
+      if (Stability != other.Stability) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Transcript.Length != 0) hash ^= Transcript.GetHashCode();
+      if (Stability != 0F) hash ^= Stability.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Transcript.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Transcript);
+      }
+      if (Stability != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(Stability);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Transcript.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Transcript);
+      }
+      if (Stability != 0F) {
+        size += 1 + 4;
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SpeechRecognitionResult other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Transcript.Length != 0) {
+        Transcript = other.Transcript;
+      }
+      if (other.Stability != 0F) {
+        Stability = other.Stability;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            Transcript = input.ReadString();
+            break;
+          }
+          case 21: {
+            Stability = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
   /// The dialog state resulting from the user's query. Multiple of these messages
   /// may be received.
   /// </summary>
@@ -1157,7 +2778,7 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1409,20 +3030,16 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
   }
 
   /// <summary>
-  /// The top-level message sent by the client. Clients must send at least two, and
-  /// typically numerous `AssistRequest` messages. The first message must
-  /// contain a `config` message and must not contain `audio_in` data. All
-  /// subsequent messages must contain `audio_in` data and must not contain a
-  /// `config` message.
+  /// Debugging parameters for the current request.
   /// </summary>
-  public sealed partial class AssistRequest : pb::IMessage<AssistRequest> {
-    private static readonly pb::MessageParser<AssistRequest> _parser = new pb::MessageParser<AssistRequest>(() => new AssistRequest());
+  public sealed partial class DebugConfig : pb::IMessage<DebugConfig> {
+    private static readonly pb::MessageParser<DebugConfig> _parser = new pb::MessageParser<DebugConfig>(() => new DebugConfig());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<AssistRequest> Parser { get { return _parser; } }
+    public static pb::MessageParser<DebugConfig> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1431,111 +3048,59 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public AssistRequest() {
+    public DebugConfig() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public AssistRequest(AssistRequest other) : this() {
-      switch (other.TypeCase) {
-        case TypeOneofCase.Config:
-          Config = other.Config.Clone();
-          break;
-        case TypeOneofCase.AudioIn:
-          AudioIn = other.AudioIn;
-          break;
-      }
-
+    public DebugConfig(DebugConfig other) : this() {
+      returnDebugInfo_ = other.returnDebugInfo_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public AssistRequest Clone() {
-      return new AssistRequest(this);
+    public DebugConfig Clone() {
+      return new DebugConfig(this);
     }
 
-    /// <summary>Field number for the "config" field.</summary>
-    public const int ConfigFieldNumber = 1;
+    /// <summary>Field number for the "return_debug_info" field.</summary>
+    public const int ReturnDebugInfoFieldNumber = 6;
+    private bool returnDebugInfo_;
     /// <summary>
-    /// The `config` message provides information to the recognizer that
-    /// specifies how to process the request.
-    /// The first `AssistRequest` message must contain a `config` message.
+    /// When this field is set to true, the `debug_info` field in `AssistResponse`
+    /// may be populated. However it will significantly increase latency of
+    /// responses. Do not set this field true in production code.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Assistant.Embedded.V1Alpha2.AssistConfig Config {
-      get { return typeCase_ == TypeOneofCase.Config ? (global::Google.Assistant.Embedded.V1Alpha2.AssistConfig) type_ : null; }
+    public bool ReturnDebugInfo {
+      get { return returnDebugInfo_; }
       set {
-        type_ = value;
-        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.Config;
+        returnDebugInfo_ = value;
       }
-    }
-
-    /// <summary>Field number for the "audio_in" field.</summary>
-    public const int AudioInFieldNumber = 2;
-    /// <summary>
-    /// The audio data to be recognized. Sequential chunks of audio data are sent
-    /// in sequential `AssistRequest` messages. The first `AssistRequest`
-    /// message must not contain `audio_in` data and all subsequent
-    /// `AssistRequest` messages must contain `audio_in` data. The audio bytes
-    /// must be encoded as specified in `AudioInConfig`.
-    /// Audio must be sent at approximately real-time (16000 samples per second).
-    /// An error will be returned if audio is sent significantly faster or
-    /// slower.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ByteString AudioIn {
-      get { return typeCase_ == TypeOneofCase.AudioIn ? (pb::ByteString) type_ : pb::ByteString.Empty; }
-      set {
-        type_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-        typeCase_ = TypeOneofCase.AudioIn;
-      }
-    }
-
-    private object type_;
-    /// <summary>Enum of possible cases for the "type" oneof.</summary>
-    public enum TypeOneofCase {
-      None = 0,
-      Config = 1,
-      AudioIn = 2,
-    }
-    private TypeOneofCase typeCase_ = TypeOneofCase.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TypeOneofCase TypeCase {
-      get { return typeCase_; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void ClearType() {
-      typeCase_ = TypeOneofCase.None;
-      type_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as AssistRequest);
+      return Equals(other as DebugConfig);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(AssistRequest other) {
+    public bool Equals(DebugConfig other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Config, other.Config)) return false;
-      if (AudioIn != other.AudioIn) return false;
-      if (TypeCase != other.TypeCase) return false;
+      if (ReturnDebugInfo != other.ReturnDebugInfo) return false;
       return true;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (typeCase_ == TypeOneofCase.Config) hash ^= Config.GetHashCode();
-      if (typeCase_ == TypeOneofCase.AudioIn) hash ^= AudioIn.GetHashCode();
-      hash ^= (int) typeCase_;
+      if (ReturnDebugInfo != false) hash ^= ReturnDebugInfo.GetHashCode();
       return hash;
     }
 
@@ -1546,293 +3111,28 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (typeCase_ == TypeOneofCase.Config) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Config);
-      }
-      if (typeCase_ == TypeOneofCase.AudioIn) {
-        output.WriteRawTag(18);
-        output.WriteBytes(AudioIn);
+      if (ReturnDebugInfo != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(ReturnDebugInfo);
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (typeCase_ == TypeOneofCase.Config) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Config);
-      }
-      if (typeCase_ == TypeOneofCase.AudioIn) {
-        size += 1 + pb::CodedOutputStream.ComputeBytesSize(AudioIn);
+      if (ReturnDebugInfo != false) {
+        size += 1 + 1;
       }
       return size;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(AssistRequest other) {
+    public void MergeFrom(DebugConfig other) {
       if (other == null) {
         return;
       }
-      switch (other.TypeCase) {
-        case TypeOneofCase.Config:
-          if (Config == null) {
-            Config = new global::Google.Assistant.Embedded.V1Alpha2.AssistConfig();
-          }
-          Config.MergeFrom(other.Config);
-          break;
-        case TypeOneofCase.AudioIn:
-          AudioIn = other.AudioIn;
-          break;
-      }
-
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            input.SkipLastField();
-            break;
-          case 10: {
-            global::Google.Assistant.Embedded.V1Alpha2.AssistConfig subBuilder = new global::Google.Assistant.Embedded.V1Alpha2.AssistConfig();
-            if (typeCase_ == TypeOneofCase.Config) {
-              subBuilder.MergeFrom(Config);
-            }
-            input.ReadMessage(subBuilder);
-            Config = subBuilder;
-            break;
-          }
-          case 18: {
-            AudioIn = input.ReadBytes();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  /// <summary>
-  /// The top-level message received by the client. A series of one or more
-  /// `AssistResponse` messages are streamed back to the client.
-  /// </summary>
-  public sealed partial class AssistResponse : pb::IMessage<AssistResponse> {
-    private static readonly pb::MessageParser<AssistResponse> _parser = new pb::MessageParser<AssistResponse>(() => new AssistResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<AssistResponse> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[7]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public AssistResponse() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public AssistResponse(AssistResponse other) : this() {
-      eventType_ = other.eventType_;
-      AudioOut = other.audioOut_ != null ? other.AudioOut.Clone() : null;
-      DeviceAction = other.deviceAction_ != null ? other.DeviceAction.Clone() : null;
-      speechResults_ = other.speechResults_.Clone();
-      DialogStateOut = other.dialogStateOut_ != null ? other.DialogStateOut.Clone() : null;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public AssistResponse Clone() {
-      return new AssistResponse(this);
-    }
-
-    /// <summary>Field number for the "event_type" field.</summary>
-    public const int EventTypeFieldNumber = 1;
-    private global::Google.Assistant.Embedded.V1Alpha2.AssistResponse.Types.EventType eventType_ = 0;
-    /// <summary>
-    /// *Output-only* Indicates the type of event.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Assistant.Embedded.V1Alpha2.AssistResponse.Types.EventType EventType {
-      get { return eventType_; }
-      set {
-        eventType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "audio_out" field.</summary>
-    public const int AudioOutFieldNumber = 3;
-    private global::Google.Assistant.Embedded.V1Alpha2.AudioOut audioOut_;
-    /// <summary>
-    /// *Output-only* The audio containing the Assistant's response to the query.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Assistant.Embedded.V1Alpha2.AudioOut AudioOut {
-      get { return audioOut_; }
-      set {
-        audioOut_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "device_action" field.</summary>
-    public const int DeviceActionFieldNumber = 6;
-    private global::Google.Assistant.Embedded.V1Alpha2.DeviceAction deviceAction_;
-    /// <summary>
-    /// *Output-only* Contains the action triggered by the query with the
-    /// appropriate payloads and semantic parsing.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Assistant.Embedded.V1Alpha2.DeviceAction DeviceAction {
-      get { return deviceAction_; }
-      set {
-        deviceAction_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "speech_results" field.</summary>
-    public const int SpeechResultsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Google.Assistant.Embedded.V1Alpha2.SpeechRecognitionResult> _repeated_speechResults_codec
-        = pb::FieldCodec.ForMessage(18, global::Google.Assistant.Embedded.V1Alpha2.SpeechRecognitionResult.Parser);
-    private readonly pbc::RepeatedField<global::Google.Assistant.Embedded.V1Alpha2.SpeechRecognitionResult> speechResults_ = new pbc::RepeatedField<global::Google.Assistant.Embedded.V1Alpha2.SpeechRecognitionResult>();
-    /// <summary>
-    /// *Output-only* This repeated list contains zero or more speech recognition
-    /// results that correspond to consecutive portions of the audio currently
-    /// being processed, starting with the portion corresponding to the earliest
-    /// audio (and most stable portion) to the portion corresponding to the most
-    /// recent audio. The strings can be concatenated to view the full
-    /// in-progress response. When the speech recognition completes, this list
-    /// will contain one item with `stability` of `1.0`.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Google.Assistant.Embedded.V1Alpha2.SpeechRecognitionResult> SpeechResults {
-      get { return speechResults_; }
-    }
-
-    /// <summary>Field number for the "dialog_state_out" field.</summary>
-    public const int DialogStateOutFieldNumber = 5;
-    private global::Google.Assistant.Embedded.V1Alpha2.DialogStateOut dialogStateOut_;
-    /// <summary>
-    /// *Output-only* Contains output related to the user's query.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Assistant.Embedded.V1Alpha2.DialogStateOut DialogStateOut {
-      get { return dialogStateOut_; }
-      set {
-        dialogStateOut_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as AssistResponse);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(AssistResponse other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (EventType != other.EventType) return false;
-      if (!object.Equals(AudioOut, other.AudioOut)) return false;
-      if (!object.Equals(DeviceAction, other.DeviceAction)) return false;
-      if(!speechResults_.Equals(other.speechResults_)) return false;
-      if (!object.Equals(DialogStateOut, other.DialogStateOut)) return false;
-      return true;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (EventType != 0) hash ^= EventType.GetHashCode();
-      if (audioOut_ != null) hash ^= AudioOut.GetHashCode();
-      if (deviceAction_ != null) hash ^= DeviceAction.GetHashCode();
-      hash ^= speechResults_.GetHashCode();
-      if (dialogStateOut_ != null) hash ^= DialogStateOut.GetHashCode();
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (EventType != 0) {
-        output.WriteRawTag(8);
-        output.WriteEnum((int) EventType);
-      }
-      speechResults_.WriteTo(output, _repeated_speechResults_codec);
-      if (audioOut_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(AudioOut);
-      }
-      if (dialogStateOut_ != null) {
-        output.WriteRawTag(42);
-        output.WriteMessage(DialogStateOut);
-      }
-      if (deviceAction_ != null) {
-        output.WriteRawTag(50);
-        output.WriteMessage(DeviceAction);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (EventType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) EventType);
-      }
-      if (audioOut_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AudioOut);
-      }
-      if (deviceAction_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DeviceAction);
-      }
-      size += speechResults_.CalculateSize(_repeated_speechResults_codec);
-      if (dialogStateOut_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DialogStateOut);
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(AssistResponse other) {
-      if (other == null) {
-        return;
-      }
-      if (other.EventType != 0) {
-        EventType = other.EventType;
-      }
-      if (other.audioOut_ != null) {
-        if (audioOut_ == null) {
-          audioOut_ = new global::Google.Assistant.Embedded.V1Alpha2.AudioOut();
-        }
-        AudioOut.MergeFrom(other.AudioOut);
-      }
-      if (other.deviceAction_ != null) {
-        if (deviceAction_ == null) {
-          deviceAction_ = new global::Google.Assistant.Embedded.V1Alpha2.DeviceAction();
-        }
-        DeviceAction.MergeFrom(other.DeviceAction);
-      }
-      speechResults_.Add(other.speechResults_);
-      if (other.dialogStateOut_ != null) {
-        if (dialogStateOut_ == null) {
-          dialogStateOut_ = new global::Google.Assistant.Embedded.V1Alpha2.DialogStateOut();
-        }
-        DialogStateOut.MergeFrom(other.DialogStateOut);
+      if (other.ReturnDebugInfo != false) {
+        ReturnDebugInfo = other.ReturnDebugInfo;
       }
     }
 
@@ -1844,514 +3144,8 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
           default:
             input.SkipLastField();
             break;
-          case 8: {
-            eventType_ = (global::Google.Assistant.Embedded.V1Alpha2.AssistResponse.Types.EventType) input.ReadEnum();
-            break;
-          }
-          case 18: {
-            speechResults_.AddEntriesFrom(input, _repeated_speechResults_codec);
-            break;
-          }
-          case 26: {
-            if (audioOut_ == null) {
-              audioOut_ = new global::Google.Assistant.Embedded.V1Alpha2.AudioOut();
-            }
-            input.ReadMessage(audioOut_);
-            break;
-          }
-          case 42: {
-            if (dialogStateOut_ == null) {
-              dialogStateOut_ = new global::Google.Assistant.Embedded.V1Alpha2.DialogStateOut();
-            }
-            input.ReadMessage(dialogStateOut_);
-            break;
-          }
-          case 50: {
-            if (deviceAction_ == null) {
-              deviceAction_ = new global::Google.Assistant.Embedded.V1Alpha2.DeviceAction();
-            }
-            input.ReadMessage(deviceAction_);
-            break;
-          }
-        }
-      }
-    }
-
-    #region Nested types
-    /// <summary>Container for nested types declared in the AssistResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static partial class Types {
-      /// <summary>
-      /// Indicates the type of event.
-      /// </summary>
-      public enum EventType {
-        /// <summary>
-        /// No event specified.
-        /// </summary>
-        [pbr::OriginalName("EVENT_TYPE_UNSPECIFIED")] Unspecified = 0,
-        /// <summary>
-        /// This event indicates that the server has detected the end of the user's
-        /// speech utterance and expects no additional speech. Therefore, the server
-        /// will not process additional audio (although it may subsequently return
-        /// additional results). The client should stop sending additional audio
-        /// data, half-close the gRPC connection, and wait for any additional results
-        /// until the server closes the gRPC connection.
-        /// </summary>
-        [pbr::OriginalName("END_OF_UTTERANCE")] EndOfUtterance = 1,
-      }
-
-    }
-    #endregion
-
-  }
-
-  /// <summary>
-  /// The estimated transcription of a phrase the user has spoken. This could be
-  /// a single segment or the full guess of the user's spoken query.
-  /// </summary>
-  public sealed partial class SpeechRecognitionResult : pb::IMessage<SpeechRecognitionResult> {
-    private static readonly pb::MessageParser<SpeechRecognitionResult> _parser = new pb::MessageParser<SpeechRecognitionResult>(() => new SpeechRecognitionResult());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<SpeechRecognitionResult> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[8]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public SpeechRecognitionResult() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public SpeechRecognitionResult(SpeechRecognitionResult other) : this() {
-      transcript_ = other.transcript_;
-      stability_ = other.stability_;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public SpeechRecognitionResult Clone() {
-      return new SpeechRecognitionResult(this);
-    }
-
-    /// <summary>Field number for the "transcript" field.</summary>
-    public const int TranscriptFieldNumber = 1;
-    private string transcript_ = "";
-    /// <summary>
-    /// *Output-only* Transcript text representing the words that the user spoke.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Transcript {
-      get { return transcript_; }
-      set {
-        transcript_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "stability" field.</summary>
-    public const int StabilityFieldNumber = 2;
-    private float stability_;
-    /// <summary>
-    /// *Output-only* An estimate of the likelihood that the Assistant will not
-    /// change its guess about this result. Values range from 0.0 (completely
-    /// unstable) to 1.0 (completely stable and final). The default of 0.0 is a
-    /// sentinel value indicating `stability` was not set.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public float Stability {
-      get { return stability_; }
-      set {
-        stability_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as SpeechRecognitionResult);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(SpeechRecognitionResult other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Transcript != other.Transcript) return false;
-      if (Stability != other.Stability) return false;
-      return true;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Transcript.Length != 0) hash ^= Transcript.GetHashCode();
-      if (Stability != 0F) hash ^= Stability.GetHashCode();
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Transcript.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Transcript);
-      }
-      if (Stability != 0F) {
-        output.WriteRawTag(21);
-        output.WriteFloat(Stability);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Transcript.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Transcript);
-      }
-      if (Stability != 0F) {
-        size += 1 + 4;
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(SpeechRecognitionResult other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Transcript.Length != 0) {
-        Transcript = other.Transcript;
-      }
-      if (other.Stability != 0F) {
-        Stability = other.Stability;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            input.SkipLastField();
-            break;
-          case 10: {
-            Transcript = input.ReadString();
-            break;
-          }
-          case 21: {
-            Stability = input.ReadFloat();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  /// <summary>
-  /// *Required* Fields that identify the device to the Assistant.
-  ///
-  /// See also:
-  ///
-  /// *   [Register a Device - REST API](https://developers.google.com/assistant/sdk/reference/device-registration/register-device-manual)
-  /// *   [Device Model and Instance Schemas](https://developers.google.com/assistant/sdk/reference/device-registration/model-and-instance-schemas)
-  /// *   [Device Proto](https://developers.google.com/assistant/sdk/reference/rpc/google.assistant.devices.v1alpha2#device)
-  /// </summary>
-  public sealed partial class DeviceConfig : pb::IMessage<DeviceConfig> {
-    private static readonly pb::MessageParser<DeviceConfig> _parser = new pb::MessageParser<DeviceConfig>(() => new DeviceConfig());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<DeviceConfig> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[9]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public DeviceConfig() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public DeviceConfig(DeviceConfig other) : this() {
-      deviceId_ = other.deviceId_;
-      deviceModelId_ = other.deviceModelId_;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public DeviceConfig Clone() {
-      return new DeviceConfig(this);
-    }
-
-    /// <summary>Field number for the "device_id" field.</summary>
-    public const int DeviceIdFieldNumber = 1;
-    private string deviceId_ = "";
-    /// <summary>
-    /// *Required* Unique identifier for the device. The id length must be 128
-    /// characters or less. Example: DBCDW098234. This MUST match the device_id
-    /// returned from device registration. This device_id is used to match against
-    /// the user's registered devices to lookup the supported traits and
-    /// capabilities of this device. This information should not change across
-    /// device reboots. However, it should not be saved across
-    /// factory-default resets.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string DeviceId {
-      get { return deviceId_; }
-      set {
-        deviceId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "device_model_id" field.</summary>
-    public const int DeviceModelIdFieldNumber = 3;
-    private string deviceModelId_ = "";
-    /// <summary>
-    /// *Required* Unique identifier for the device model. The combination of
-    /// device_model_id and device_id must have been previously associated through
-    /// device registration.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string DeviceModelId {
-      get { return deviceModelId_; }
-      set {
-        deviceModelId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as DeviceConfig);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(DeviceConfig other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (DeviceId != other.DeviceId) return false;
-      if (DeviceModelId != other.DeviceModelId) return false;
-      return true;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (DeviceId.Length != 0) hash ^= DeviceId.GetHashCode();
-      if (DeviceModelId.Length != 0) hash ^= DeviceModelId.GetHashCode();
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (DeviceId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(DeviceId);
-      }
-      if (DeviceModelId.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(DeviceModelId);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (DeviceId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceId);
-      }
-      if (DeviceModelId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceModelId);
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(DeviceConfig other) {
-      if (other == null) {
-        return;
-      }
-      if (other.DeviceId.Length != 0) {
-        DeviceId = other.DeviceId;
-      }
-      if (other.DeviceModelId.Length != 0) {
-        DeviceModelId = other.DeviceModelId;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            input.SkipLastField();
-            break;
-          case 10: {
-            DeviceId = input.ReadString();
-            break;
-          }
-          case 26: {
-            DeviceModelId = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  /// <summary>
-  /// The response returned to the device if the user has triggered a Device
-  /// Action. For example, a device which supports the query *Turn on the light*
-  /// would receive a `DeviceAction` with a JSON payload containing the semantics
-  /// of the request.
-  /// </summary>
-  public sealed partial class DeviceAction : pb::IMessage<DeviceAction> {
-    private static readonly pb::MessageParser<DeviceAction> _parser = new pb::MessageParser<DeviceAction>(() => new DeviceAction());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<DeviceAction> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[10]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public DeviceAction() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public DeviceAction(DeviceAction other) : this() {
-      deviceRequestJson_ = other.deviceRequestJson_;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public DeviceAction Clone() {
-      return new DeviceAction(this);
-    }
-
-    /// <summary>Field number for the "device_request_json" field.</summary>
-    public const int DeviceRequestJsonFieldNumber = 1;
-    private string deviceRequestJson_ = "";
-    /// <summary>
-    /// JSON containing the device command response generated from the triggered
-    /// Device Action grammar. The format is given by the
-    /// `action.devices.EXECUTE` intent for a given
-    /// [trait](https://developers.google.com/assistant/sdk/reference/traits/).
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string DeviceRequestJson {
-      get { return deviceRequestJson_; }
-      set {
-        deviceRequestJson_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as DeviceAction);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(DeviceAction other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (DeviceRequestJson != other.DeviceRequestJson) return false;
-      return true;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (DeviceRequestJson.Length != 0) hash ^= DeviceRequestJson.GetHashCode();
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (DeviceRequestJson.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(DeviceRequestJson);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (DeviceRequestJson.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceRequestJson);
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(DeviceAction other) {
-      if (other == null) {
-        return;
-      }
-      if (other.DeviceRequestJson.Length != 0) {
-        DeviceRequestJson = other.DeviceRequestJson;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            input.SkipLastField();
-            break;
-          case 10: {
-            DeviceRequestJson = input.ReadString();
+          case 48: {
+            ReturnDebugInfo = input.ReadBool();
             break;
           }
         }
@@ -2377,7 +3171,7 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Google.Assistant.Embedded.V1Alpha2.EmbeddedAssistantReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
