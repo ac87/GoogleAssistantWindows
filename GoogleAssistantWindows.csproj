@@ -109,6 +109,9 @@
     <Compile Include="Assistant.cs" />
     <Compile Include="AudioOut.cs" />
     <Compile Include="Const.cs" />
+    <Compile Include="DialogResult.cs" />
+    <Compile Include="DialogResultActor.cs" />
+    <Compile Include="DialogResultDataTemplateSelector.cs" />
     <Compile Include="Generated\googleapis\Latlng.cs" />
     <Compile Include="GoogleAccountControl.xaml.cs">
       <DependentUpon>GoogleAccountControl.xaml</DependentUpon>

@@ -5,10 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GoogleAssistantWindows"
         mc:Ignorable="d"
-        Title="Google Assistant Windows" Height="100" Width="525" Loaded="MainWindow_OnLoaded" ResizeMode="CanMinimize">
+        Title="Google Assistant Windows" Height="350" Width="525" Loaded="MainWindow_OnLoaded" ResizeMode="CanMinimize">
+
+    <Window.Resources>
+        <local:DialogResultDataTemplateSelector x:Key="dialogResultDataTemplateSelector"/>
+    </Window.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
+            <RowDefinition Height="250"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
@@ -24,6 +30,27 @@
             <Button Content="Debug" Grid.Column="1" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Center" Padding="10" Click="DebugButton_OnClick"/>
         </Grid>
 
-        <ListBox Grid.Row="1" x:Name="ListBoxOutput" Margin="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+        <ListBox Grid.Row="1" x:Name="DialogBox" Margin="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                 ItemTemplateSelector="{StaticResource dialogResultDataTemplateSelector}"
+                 HorizontalContentAlignment="Stretch"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListBox.Resources>
+                <DataTemplate x:Key="googleAssistantResultTemplate">
+                    <StackPanel>
+                        <TextBlock Text="Google Assistant:" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Path=Message}" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </DataTemplate>
+                <DataTemplate x:Key="userResultTemplate">
+                    <StackPanel>
+                        <TextBlock Text="User:" TextAlignment="Right" FontWeight="Bold" />
+                        <TextBlock Text="{Binding Path=Message}" TextAlignment="Right" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.Resources>
+        </ListBox>
+        <ListBox Grid.Row="2" x:Name="ListBoxOutput" Margin="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Auto" />
     </Grid>
+
+
 </Window>

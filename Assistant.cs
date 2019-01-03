@@ -5,6 +5,7 @@ using Google.Assistant.Embedded.V1Alpha2;
 using Google.Protobuf;
 using Grpc.Core;
 using NAudio.Wave;
+using static Google.Assistant.Embedded.V1Alpha2.ScreenOutConfig.Types;
 
 namespace GoogleAssistantWindows
 {
@@ -16,6 +17,12 @@ namespace GoogleAssistantWindows
         public delegate void AssistantWorkingDelegate(AssistantState state);
         public event AssistantWorkingDelegate OnAssistantStateChanged;
 
+        public delegate void AssistantDialogResult(string message);
+        public event AssistantDialogResult OnAssistantDialogResult;
+
+        public delegate void AssistantSpeechResult(string message);
+        public event AssistantSpeechResult OnAssistantSpeechResult;
+        
         private Channel _channel;
         private EmbeddedAssistant.EmbeddedAssistantClient _assistant;
 
@@ -106,9 +113,14 @@ namespace GoogleAssistantWindows
                 VolumePercentage = 75
             };
 
+            var screenOut = new ScreenOutConfig()
+            {
+                ScreenMode = ScreenMode.Playing
+            };
+
             DialogStateIn state = new DialogStateIn() { ConversationState = ByteString.Empty, LanguageCode = "en-US" };
             DeviceConfig device = new DeviceConfig() { DeviceModelId = "assistanttest-187121-myTest",  DeviceId = "mylaptop" };
-            converseRequest.Config = new AssistConfig() { AudioInConfig = audioIn, AudioOutConfig = audioOut, DialogStateIn = state, DeviceConfig = device };
+            converseRequest.Config = new AssistConfig() { AudioInConfig = audioIn, AudioOutConfig = audioOut, DialogStateIn = state, DeviceConfig = device, ScreenOutConfig = screenOut };
 
             return converseRequest;
         }        
@@ -189,11 +201,25 @@ namespace GoogleAssistantWindows
                 if (currentResponse.AudioOut != null)
                     _audioOut.AddBytesToPlay(currentResponse.AudioOut.AudioData.ToByteArray());
 
+                if(currentResponse.ScreenOut != null)
+                {
+
+                }
+
+                if(currentResponse.SpeechResults.Count == 1 && currentResponse.SpeechResults[0].Stability == 1.0)
+                {
+                    OnAssistantSpeechResult?.Invoke(currentResponse.SpeechResults[0].Transcript);
+                }
+
                 if (currentResponse.DialogStateOut != null)
                 {
                     // if the assistant has recognised something, flag this so the failure notification isn't played
                     if (!String.IsNullOrEmpty(currentResponse.DialogStateOut.SupplementalDisplayText))
+                    {
                         _assistantResponseReceived = true;
+
+                        OnAssistantDialogResult?.Invoke(currentResponse.DialogStateOut.SupplementalDisplayText);
+                    }
 
                     switch (currentResponse.DialogStateOut.MicrophoneMode)
                     {
