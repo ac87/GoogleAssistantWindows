@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -12,8 +13,8 @@ namespace GoogleAssistantWindows
     /// </summary>
     public partial class MainWindow : Window
     {
-        private const int NormalHeight = 100;
-        private const int DebugHeight = 350;
+        private const int NormalHeight = 350;
+        private const int DebugHeight = 600;
 
         private readonly UserManager _userManager;
         private readonly Assistant _assistant;
@@ -27,7 +28,9 @@ namespace GoogleAssistantWindows
         private ScrollViewer listBoxOutputScrollViewer;
 
         private AssistantState _assistantState = AssistantState.Inactive;
-        
+
+        private ObservableCollection<DialogResult> dialogResults;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -58,9 +61,24 @@ namespace GoogleAssistantWindows
             _assistant = new Assistant();
             _assistant.OnDebug += Output;
             _assistant.OnAssistantStateChanged += OnAssistantStateChanged;
+            _assistant.OnAssistantDialogResult += OnAssistantDialogResult;
+            _assistant.OnAssistantSpeechResult += OnAssistantSpeechResult;
 
             _userManager = UserManager.Instance;
             _userManager.OnUserUpdate += OnUserUpdate;
+
+            dialogResults = new ObservableCollection<DialogResult>();
+            DialogBox.ItemsSource = dialogResults;
+        }
+
+        private void OnAssistantSpeechResult(string message)
+        {
+            dialogResults.Add(new DialogResult() { Actor = DialogResultActor.User, Message = message });
+        }
+
+        private void OnAssistantDialogResult(string message)
+        {
+            dialogResults.Add(new DialogResult() { Actor = DialogResultActor.GoogleAssistant, Message = message });
         }
 
         protected override void OnStateChanged(EventArgs e)
