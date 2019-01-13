@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Autofac;
+using System;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -13,8 +15,8 @@ namespace GoogleAssistantWindows
     /// </summary>
     public partial class MainWindow : Window
     {
-        private const int NormalHeight = 350;
-        private const int DebugHeight = 600;
+        private const int NormalHeight = 368;
+        private const int DebugHeight = 618;
 
         private readonly UserManager _userManager;
         private readonly Assistant _assistant;
@@ -191,6 +193,16 @@ namespace GoogleAssistantWindows
             return null;
         }
 
+        private void OnProjectWebsiteClick(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://github.com/pieterderycke/GoogleAssistantWindows");
+        }
 
+        private void OnSettingsClick(object sender, RoutedEventArgs e)
+        {
+            SettingsWindow dialog = App.Container.Resolve<SettingsWindow>();
+            dialog.Owner = this;
+            dialog.ShowDialog();
+        }
     }
 }

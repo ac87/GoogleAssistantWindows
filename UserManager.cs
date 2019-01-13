@@ -72,7 +72,7 @@ namespace GoogleAssistantWindows
         {
             if (_credential == null)
             {
-                using (var stream = new FileStream(@"Secrets\client_id.json", FileMode.Open, FileAccess.Read))
+                using (var stream = new FileStream(Utils.GetDataStoreFolder() + @"client_id.json", FileMode.Open, FileAccess.Read))
                 {
                     _credential =
                         await GoogleWebAuthorizationBroker.AuthorizeAsync(GoogleClientSecrets.Load(stream).Secrets,
