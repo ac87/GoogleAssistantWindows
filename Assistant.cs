@@ -11,6 +11,8 @@ namespace GoogleAssistantWindows
 {
     public class Assistant
     {
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+
         public delegate void DebugOutputDelegate(string debug, bool consoleOnly = false);
         public event DebugOutputDelegate OnDebug;
 
@@ -71,6 +73,7 @@ namespace GoogleAssistantWindows
                 _requestStream = assist.RequestStream;
                 _responseStream = assist.ResponseStream;
 
+                logger.Debug("New Conversation - New Config Request");
                 OnDebug?.Invoke("New Conversation - New Config Request");
 
                 // Once this opening request is issued if its not followed by audio an error of 'code: 14, message: Service Unavaible.' comes back, really not helpful Google!
@@ -88,6 +91,7 @@ namespace GoogleAssistantWindows
             }
             catch (Exception ex)
             {
+                logger.Error(ex.Message);
                 Console.WriteLine(ex.Message);
                 OnDebug?.Invoke($"Error {ex.Message}");                
                 StopRecording();
@@ -129,6 +133,7 @@ namespace GoogleAssistantWindows
         {
             if (_waveIn != null)
             {
+                logger.Debug("Stop Recording");
                 OnDebug?.Invoke("Stop Recording");                
                 _waveIn.StopRecording();
                 _waveIn.Dispose();
@@ -136,6 +141,7 @@ namespace GoogleAssistantWindows
 
                 OnAssistantStateChanged?.Invoke(AssistantState.Processing);
 
+                logger.Debug("Send Request Complete");
                 OnDebug?.Invoke("Send Request Complete");
                 _requestStreamAvailable = false;
                 _requestStream.CompleteAsync();                
@@ -144,6 +150,7 @@ namespace GoogleAssistantWindows
 
         private void ProcessInAudio(object sender, WaveInEventArgs e)
         {
+            logger.Debug($"Process Audio {e.Buffer.Length} SendSpeech={_sendSpeech} Writing={_writing}");
             OnDebug?.Invoke($"Process Audio {e.Buffer.Length} SendSpeech={_sendSpeech} Writing={_writing}", true);
 
             if (_sendSpeech)
@@ -178,6 +185,7 @@ namespace GoogleAssistantWindows
 
         private async Task WriteAudioIn(byte[] buffer)
         {
+            logger.Debug("Write Audio " + buffer.Length);
             OnDebug?.Invoke("Write Audio " + buffer.Length, true);
             var request = new AssistRequest() {AudioIn = ByteString.CopyFrom(buffer)};
             await _requestStream.WriteAsync(request);
@@ -192,6 +200,7 @@ namespace GoogleAssistantWindows
                 AssistResponse currentResponse = _responseStream.Current;
 
                 // Debug output the whole response, useful for.. debugging.
+                logger.Debug(ResponseToOutput(currentResponse));
                 OnDebug?.Invoke(ResponseToOutput(currentResponse));
 
                 // EndOfUtterance, Assistant has recognised something so stop sending audio 
@@ -246,6 +255,7 @@ namespace GoogleAssistantWindows
             }
             else
             {
+                logger.Debug("Response End");
                 OnDebug?.Invoke("Response End");
                 // if we've received any audio... play it.
                 _audioOut.Play();

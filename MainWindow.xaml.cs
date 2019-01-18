@@ -143,16 +143,8 @@ namespace GoogleAssistantWindows
 
         public void Output(string output, bool consoleOnly = false)
         {
-            if (consoleOnly)
-            {
-                System.Diagnostics.Debug.WriteLine(output);
-                return;
-            }
-
             if (ListBoxOutput.Dispatcher.CheckAccess())
             {
-                System.Diagnostics.Debug.WriteLine(output);
-
                 // stop using memory for old debug lines.
                 if (ListBoxOutput.Items.Count > 500)
                     ListBoxOutput.Items.RemoveAt(0);
