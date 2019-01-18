@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GoogleAssistantWindows"
+        xmlns:util="clr-namespace:GoogleAssistantWindows.Util"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         Title="Google Assistant Windows" Height="368" Width="525" Loaded="MainWindow_OnLoaded" ResizeMode="CanMinimize">
 
@@ -46,6 +48,9 @@
                      ItemTemplateSelector="{StaticResource dialogResultDataTemplateSelector}"
                      HorizontalContentAlignment="Stretch"
                      ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <i:Interaction.Behaviors>
+                    <util:AutoScroller/>
+                </i:Interaction.Behaviors>
                 <ListBox.Resources>
                     <DataTemplate x:Key="googleAssistantResultTemplate">
                         <StackPanel>
