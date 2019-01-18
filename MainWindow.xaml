@@ -38,16 +38,20 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <local:GoogleAccountControl />
+                <local:GoogleAccountControl Grid.ColumnSpan="2" Margin="10,0,309,0" />
 
-                <Button x:Name="ButtonRecord" Content="Press" Grid.Column="1" Padding="10" Margin="0,0,40,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="134" Click="ButtonRecord_OnClick" IsEnabled="False" IsDefault="True"/>
-                <Button Content="Debug" Grid.Column="1" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Center" Padding="10" Click="DebugButton_OnClick"/>
+                <Button x:Name="ButtonRecord" Grid.Column="1" Margin="0,10,10,10" VerticalAlignment="Center" Click="ButtonRecord_OnClick" IsEnabled="False" IsDefault="True" Height="40" HorizontalAlignment="Right" Width="197">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Name="ButtonRecordIcon" FontFamily="Segoe MDL2 Assets" Text="&#xE720;" FontSize="20" Margin="0,0,10,0" />
+                        <TextBlock x:Name="ButtonRecordText" Text="Press"/>
+                    </StackPanel>
+                </Button>
             </Grid>
 
-            <ListBox Grid.Row="1" x:Name="DialogBox" Margin="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Auto"
+            <ListBox Grid.Row="1" x:Name="DialogBox" Margin="10,4,10,10" HorizontalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Auto"
                      ItemTemplateSelector="{StaticResource dialogResultDataTemplateSelector}"
                      HorizontalContentAlignment="Stretch"
-                     ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                     ScrollViewer.HorizontalScrollBarVisibility="Disabled" Grid.RowSpan="2">
                 <i:Interaction.Behaviors>
                     <util:AutoScroller/>
                 </i:Interaction.Behaviors>
@@ -66,7 +70,6 @@
                     </DataTemplate>
                 </ListBox.Resources>
             </ListBox>
-            <ListBox Grid.Row="2" x:Name="ListBoxOutput" Margin="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Auto" />
         </Grid>
     </DockPanel>
 

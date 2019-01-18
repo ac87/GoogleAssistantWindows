@@ -27,8 +27,6 @@ namespace GoogleAssistantWindows
 
         private readonly AudioOut _audioOut;
 
-        private ScrollViewer listBoxOutputScrollViewer;
-
         private AssistantState _assistantState = AssistantState.Inactive;
 
         private ObservableCollection<DialogResult> dialogResults;
@@ -61,7 +59,6 @@ namespace GoogleAssistantWindows
                 };
 
             _assistant = new Assistant();
-            _assistant.OnDebug += Output;
             _assistant.OnAssistantStateChanged += OnAssistantStateChanged;
             _assistant.OnAssistantDialogResult += OnAssistantDialogResult;
             _assistant.OnAssistantSpeechResult += OnAssistantSpeechResult;
@@ -102,9 +99,29 @@ namespace GoogleAssistantWindows
         private void UpdateButtonText(AssistantState state)
         {
             if (ButtonRecord.Dispatcher.CheckAccess())
-                ButtonRecord.Content = state == AssistantState.Inactive ? "Press" : state.ToString();
+            {
+                switch(state)
+                {
+                    case AssistantState.Listening:
+                        ButtonRecordIcon.Text = "\xF12E";
+                        ButtonRecordText.Text = state.ToString();
+                        break;
+                    case AssistantState.Processing:
+                        ButtonRecordIcon.Text = "\xE9F5";
+                        ButtonRecordText.Text = state.ToString();
+                        break;
+                    case AssistantState.Speaking:
+                        ButtonRecordIcon.Text = "\xF5B0";
+                        ButtonRecordText.Text = state.ToString();
+                        break;
+                    case AssistantState.Inactive:
+                        ButtonRecordIcon.Text = "\xE720";
+                        ButtonRecordText.Text = "Press";
+                        break;
+                }
+            }
             else
-                ButtonRecord.Dispatcher.BeginInvoke(new Action(()=>UpdateButtonText(state)));
+                ButtonRecord.Dispatcher.BeginInvoke(new Action(() => UpdateButtonText(state)));
         }
 
         private void OnUserUpdate(UserManager.GoogleUserData userData)
@@ -122,9 +139,6 @@ namespace GoogleAssistantWindows
         {
             if (Utils.HasTokenFile()) 
                 _userManager.GetOrRefreshCredential();     // we don't need to wait for this UserManager will throw an event on loaded.  
-
-            listBoxOutputScrollViewer = FindVisualChild<ScrollViewer>(ListBoxOutput);
-
         }
 
         private void ButtonRecord_OnClick(object sender, RoutedEventArgs e)
@@ -139,24 +153,6 @@ namespace GoogleAssistantWindows
                 _assistant.NewConversation();          
                 _audioOut.PlayNotification();
             }
-        }
-
-        public void Output(string output, bool consoleOnly = false)
-        {
-            if (ListBoxOutput.Dispatcher.CheckAccess())
-            {
-                // stop using memory for old debug lines.
-                if (ListBoxOutput.Items.Count > 500)
-                    ListBoxOutput.Items.RemoveAt(0);
-
-                ListBoxOutput.Items.Add(output);
-                listBoxOutputScrollViewer.ScrollToBottom(); // fix because ListBoxOutput.ScrollIntoView was not working reliable
-
-                if (output.StartsWith("Error") && Height == NormalHeight)
-                    Height = DebugHeight;
-            }
-            else
-                ListBoxOutput.Dispatcher.BeginInvoke(new Action(() => Output(output)));
         }
 
         private void DebugButton_OnClick(object sender, RoutedEventArgs e)
