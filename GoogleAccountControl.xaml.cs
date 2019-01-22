@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Autofac;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -16,7 +17,7 @@ namespace GoogleAssistantWindows
         public GoogleAccountControl()
         {
             InitializeComponent();
-            _userManager = UserManager.Instance;
+            _userManager = App.Container.Resolve<UserManager>();
             _userManager.OnUserUpdate += OnUserUpdate;
         }
 

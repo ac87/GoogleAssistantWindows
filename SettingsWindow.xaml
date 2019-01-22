@@ -5,19 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GoogleAssistantWindows"
         mc:Ignorable="d"
-        Title="SettingsWindow" Height="266" Width="471.239"
+        Title="Settings" Height="372" Width="471.239"
         Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"
         Loaded="Window_Loaded">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="10,15,0,0" TextWrapping="Wrap" Text="Client ID:" VerticalAlignment="Top"/>
-        <TextBox Name="clientIdTextBox" Height="23" Margin="10,36,50,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <Button Content="..." Margin="0,36,10,0" VerticalAlignment="Top" Height="23" HorizontalAlignment="Right" Width="35"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,64,0,0" TextWrapping="Wrap" Text="Device Model ID:" VerticalAlignment="Top"/>
-        <TextBox Name="deviceModelIdTextBox" Height="23" Margin="10,85,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,113,0,0" TextWrapping="Wrap" Text="Device ID:" VerticalAlignment="Top"/>
-        <TextBox Name="deviceIdTextBox" Height="23" Margin="10,134,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <Button Content="Cancel" Margin="0,0,10,10" RenderTransformOrigin="1.48,1.35" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="Cancel_Click"/>
-        <Button Content="OK" Margin="0,0,90,10" HorizontalAlignment="Right" Width="75" Height="20" VerticalAlignment="Bottom" Click="Ok_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Client ID:" VerticalAlignment="Top" Height="16" Width="48"/>
+        <TextBox Name="clientIdTextBox" Margin="10,31,10,209" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" />
+        <Button Content="Select File" Margin="0,0,10,181" HorizontalAlignment="Right" Width="75" Height="23" VerticalAlignment="Bottom" Click="OnSelectFileClick"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,0,0,160" TextWrapping="Wrap" Text="Device Model ID:" Width="443" Height="16" VerticalAlignment="Bottom"/>
+        <TextBox Name="deviceModelIdTextBox" Margin="10,0,10,132" TextWrapping="Wrap" Height="23" VerticalAlignment="Bottom"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,0,0,111" TextWrapping="Wrap" Text="Device ID:" Width="53" Height="16" VerticalAlignment="Bottom" RenderTransformOrigin="0.245,0.688"/>
+        <TextBox Name="deviceIdTextBox" Margin="10,0,10,83" TextWrapping="Wrap" Height="23" VerticalAlignment="Bottom"/>
+        <Button Content="Cancel" Margin="0,0,10,10" RenderTransformOrigin="1.48,1.35" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="Cancel_Click" />
+        <Button Content="OK" Margin="0,0,90,10" HorizontalAlignment="Right" Width="75" Click="Ok_Click" Height="20" VerticalAlignment="Bottom" />
+        <TextBlock HorizontalAlignment="Left" Margin="10,0,0,62" TextWrapping="Wrap" Text="Language Code:" Height="16" VerticalAlignment="Bottom"/>
+        <ComboBox Name="languageCodeComboBox" Margin="10,0,10,35" Height="22" VerticalAlignment="Bottom">
+            <ComboBoxItem Name="enUS">en-US</ComboBoxItem>
+        </ComboBox>
 
     </Grid>
 </Window>

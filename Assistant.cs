@@ -39,6 +39,8 @@ namespace GoogleAssistantWindows
 
         private readonly AudioOut _audioOut = new AudioOut();
 
+        private readonly Settings settings;
+
         // todo tidy this mess of flags up
         private bool _requestStreamAvailable = false;
         private bool _assistantResponseReceived = false;
@@ -48,8 +50,10 @@ namespace GoogleAssistantWindows
         // If this documentation was a flow chart it would have been much better
         // https://developers.google.com/assistant/sdk/reference/rpc/google.assistant.embedded.v1alpha1#google.assistant.embedded.v1alpha1.EmbeddedAssistant
 
-        public Assistant()
+        public Assistant(Settings settings)
         {
+            this.settings = settings;
+
             _audioOut.OnAudioPlaybackStateChanged += OnAudioPlaybackStateChanged;
         }        
 
@@ -122,8 +126,8 @@ namespace GoogleAssistantWindows
                 ScreenMode = ScreenMode.Playing
             };
 
-            DialogStateIn state = new DialogStateIn() { ConversationState = ByteString.Empty, LanguageCode = "en-US" };
-            DeviceConfig device = new DeviceConfig() { DeviceModelId = "assistanttest-187121-myTest",  DeviceId = "mylaptop" };
+            DialogStateIn state = new DialogStateIn() { ConversationState = ByteString.Empty, LanguageCode = this.settings.LanguageCode };
+            DeviceConfig device = new DeviceConfig() { DeviceModelId = this.settings.DeviceModelId,  DeviceId = this.settings.DeviceId };
             converseRequest.Config = new AssistConfig() { AudioInConfig = audioIn, AudioOutConfig = audioOut, DialogStateIn = state, DeviceConfig = device, ScreenOutConfig = screenOut };
 
             return converseRequest;

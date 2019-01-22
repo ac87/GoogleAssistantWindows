@@ -2,7 +2,7 @@
 {
     public class Const
     {
-        public const string Folder = "GoogleAssistantWindows";
+        public const string Folder = "GAssistant";
         public const string AssistantEndpoint = "embeddedassistant.googleapis.com";
         public const string AssistantScope = "https://www.googleapis.com/auth/assistant-sdk-prototype";
         public static readonly string[] Scope = { "openid", AssistantScope };

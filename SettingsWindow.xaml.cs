@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +34,7 @@ namespace GoogleAssistantWindows
             clientIdTextBox.Text = settings.ClientId;
             deviceIdTextBox.Text = settings.DeviceId;
             deviceModelIdTextBox.Text = settings.DeviceModelId;
+            languageCodeComboBox.Text = settings.LanguageCode;
         }
 
         private void Ok_Click(object sender, RoutedEventArgs e)
@@ -39,6 +42,7 @@ namespace GoogleAssistantWindows
             settings.ClientId = clientIdTextBox.Text;
             settings.DeviceId = deviceIdTextBox.Text;
             settings.DeviceModelId = deviceModelIdTextBox.Text;
+            settings.LanguageCode = languageCodeComboBox.Text;
 
             settings.Save();
             Close();
@@ -47,6 +51,18 @@ namespace GoogleAssistantWindows
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void OnSelectFileClick(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            bool? result = dialog.ShowDialog(this);
+
+            if(result == true)
+            {
+                string fileName = dialog.FileName;
+                clientIdTextBox.Text = File.ReadAllText(fileName);
+            }
         }
     }
 }

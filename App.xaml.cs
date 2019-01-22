@@ -22,14 +22,17 @@ namespace GoogleAssistantWindows
             builder.RegisterType<MainWindow>();
             builder.RegisterType<SettingsWindow>();
 
+            builder.RegisterType<Assistant>()
+                .SingleInstance();
+            builder.RegisterType<UserManager>()
+                .SingleInstance();
+
             builder.RegisterType<Settings>()
                 .OnActivating(settings =>
                     {
                         settings.Instance.Load();
                     })
                 .SingleInstance();
-            //builder.RegisterType<ICustomerService, CustomerService>();
-            //container.RegisterType<IShoppingCartService, ShoppingCartService>();
 
             Container = builder.Build();
 

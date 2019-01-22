@@ -27,16 +27,12 @@ namespace GoogleAssistantWindows
         public delegate void UserUpdateDelegate(GoogleUserData userData); 
         public event UserUpdateDelegate OnUserUpdate;
 
-        private static UserManager _instance;
+        private Settings settings;
 
-        public static UserManager Instance
+        public UserManager(Settings settings)
         {
-            get
-            {
-                if (_instance == null)
-                    _instance = new UserManager();
-                return _instance;
-            }
+            this.settings = settings;
+            this.settings.OnClientIdChanged += OnClientIdChanged;
         }
 
         public ChannelCredentials GetChannelCredential()
@@ -87,6 +83,12 @@ namespace GoogleAssistantWindows
             {
                 await _credential.RefreshTokenAsync(CancellationToken.None);
             }
+        }
+
+        private void OnClientIdChanged()
+        {
+            //We Sign-out with the Client Id changes
+            SignOut();
         }
 
         private void CreateRefreshTimer()

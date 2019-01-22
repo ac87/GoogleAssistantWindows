@@ -31,7 +31,7 @@ namespace GoogleAssistantWindows
 
         private ObservableCollection<DialogResult> dialogResults;
 
-        public MainWindow()
+        public MainWindow(Assistant assistant, UserManager userManager)
         {
             InitializeComponent();
 
@@ -58,13 +58,13 @@ namespace GoogleAssistantWindows
                     WindowState = WindowState.Normal;
                 };
 
-            _assistant = new Assistant();
-            _assistant.OnAssistantStateChanged += OnAssistantStateChanged;
-            _assistant.OnAssistantDialogResult += OnAssistantDialogResult;
-            _assistant.OnAssistantSpeechResult += OnAssistantSpeechResult;
+            this._assistant = assistant;
+            this._assistant.OnAssistantStateChanged += OnAssistantStateChanged;
+            this._assistant.OnAssistantDialogResult += OnAssistantDialogResult;
+            this._assistant.OnAssistantSpeechResult += OnAssistantSpeechResult;
 
-            _userManager = UserManager.Instance;
-            _userManager.OnUserUpdate += OnUserUpdate;
+            this._userManager = userManager;
+            this._userManager.OnUserUpdate += OnUserUpdate;
 
             dialogResults = new ObservableCollection<DialogResult>();
             DialogBox.ItemsSource = dialogResults;
@@ -160,27 +160,6 @@ namespace GoogleAssistantWindows
             Height = (Height == NormalHeight ? DebugHeight : NormalHeight);
         }
 
-        private childItem FindVisualChild<childItem>(DependencyObject obj) where childItem : DependencyObject
-        {
-            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(obj); i++)
-            {
-                DependencyObject child = VisualTreeHelper.GetChild(obj, i);
-                if (child != null && child is childItem)
-                {
-                    return (childItem)child;
-                }
-                else
-                {
-                    childItem childOfChild = FindVisualChild <childItem>(child);
-                    if (childOfChild != null)
-                    {
-                        return childOfChild;
-                    }
-                }
-            }
-            return null;
-        }
-
         private void OnProjectWebsiteClick(object sender, RoutedEventArgs e)
         {
             Process.Start("https://github.com/pieterderycke/GoogleAssistantWindows");
@@ -191,6 +170,11 @@ namespace GoogleAssistantWindows
             SettingsWindow dialog = App.Container.Resolve<SettingsWindow>();
             dialog.Owner = this;
             dialog.ShowDialog();
+        }
+
+        private void OnLogFileClick(object sender, RoutedEventArgs e)
+        {
+            Process.Start(Utils.GetDataStoreFolder() + "log.txt");
         }
     }
 }

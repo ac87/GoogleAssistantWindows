@@ -7,7 +7,7 @@
         xmlns:util="clr-namespace:GoogleAssistantWindows.Util"
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
-        Title="Google Assistant Windows" Height="368" Width="525" Loaded="MainWindow_OnLoaded" ResizeMode="CanMinimize">
+        Title="G-Assistant" Height="368" Width="525" Loaded="MainWindow_OnLoaded" ResizeMode="CanMinimize">
 
     <Window.Resources>
         <local:DialogResultDataTemplateSelector x:Key="dialogResultDataTemplateSelector"/>
@@ -19,7 +19,7 @@
                 <MenuItem Header="Settings" Click="OnSettingsClick"/>
             </MenuItem>
             <MenuItem Header="_Help">
-                <MenuItem Header="Log File"/>
+                <MenuItem Header="Log File" Click="OnLogFileClick"/>
                 <MenuItem Header="Project Website" Click="OnProjectWebsiteClick"/>
                 <Separator/>
                 <MenuItem Header="About"/>
