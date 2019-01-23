@@ -20,6 +20,7 @@ namespace GoogleAssistantWindows
 
         private readonly UserManager _userManager;
         private readonly Assistant _assistant;
+        private readonly Settings settings;
 
         private readonly KeyboardHook _hook;
 
@@ -31,7 +32,7 @@ namespace GoogleAssistantWindows
 
         private ObservableCollection<DialogResult> dialogResults;
 
-        public MainWindow(Assistant assistant, UserManager userManager)
+        public MainWindow(Assistant assistant, UserManager userManager, Settings settings)
         {
             InitializeComponent();
 
@@ -66,18 +67,10 @@ namespace GoogleAssistantWindows
             this._userManager = userManager;
             this._userManager.OnUserUpdate += OnUserUpdate;
 
+            this.settings = settings;
+
             dialogResults = new ObservableCollection<DialogResult>();
             DialogBox.ItemsSource = dialogResults;
-        }
-
-        private void OnAssistantSpeechResult(string message)
-        {
-            dialogResults.Add(new DialogResult() { Actor = DialogResultActor.User, Message = message });
-        }
-
-        private void OnAssistantDialogResult(string message)
-        {
-            dialogResults.Add(new DialogResult() { Actor = DialogResultActor.GoogleAssistant, Message = message });
         }
 
         protected override void OnStateChanged(EventArgs e)
@@ -89,7 +82,17 @@ namespace GoogleAssistantWindows
             }
             base.OnStateChanged(e);
         }
-        
+
+        private void OnAssistantSpeechResult(string message)
+        {
+            dialogResults.Add(new DialogResult() { Actor = DialogResultActor.User, Message = message });
+        }
+
+        private void OnAssistantDialogResult(string message)
+        {
+            dialogResults.Add(new DialogResult() { Actor = DialogResultActor.GoogleAssistant, Message = message });
+        }
+               
         private void OnAssistantStateChanged(AssistantState state)
         {
             _assistantState = state;
@@ -139,6 +142,13 @@ namespace GoogleAssistantWindows
         {
             if (Utils.HasTokenFile()) 
                 _userManager.GetOrRefreshCredential();     // we don't need to wait for this UserManager will throw an event on loaded.  
+
+            if (settings.ShowWelcome)
+            {
+                WelcomeWindow dialog = App.Container.Resolve<WelcomeWindow>();
+                dialog.Owner = this;
+                dialog.ShowDialog();
+            }
         }
 
         private void ButtonRecord_OnClick(object sender, RoutedEventArgs e)

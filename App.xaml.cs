@@ -21,6 +21,7 @@ namespace GoogleAssistantWindows
             var builder = new ContainerBuilder();
             builder.RegisterType<MainWindow>();
             builder.RegisterType<SettingsWindow>();
+            builder.RegisterType<WelcomeWindow>();
 
             builder.RegisterType<Assistant>()
                 .SingleInstance();

@@ -37,17 +37,28 @@ namespace GoogleAssistantWindows
         public string DeviceModelId { get; set; }
         public string DeviceId { get; set; }
         public string LanguageCode { get; set; }
+        public bool ShowWelcome { get; set; }
 
         public void Load()
         {
             ClientId = File.ReadAllText(Utils.GetDataStoreFolder() + ClientIdFilename);
 
-            using (TextReader reader = File.OpenText(Utils.GetDataStoreFolder() + SettingsFilename))
+            string fileName = Utils.GetDataStoreFolder() + SettingsFilename;
+
+            if (File.Exists(fileName))
             {
-                JObject json = JObject.Load(new JsonTextReader(reader));
-                DeviceModelId = (string)json.SelectToken("device_model_id");
-                DeviceId = (string)json.SelectToken("device_id");
-                LanguageCode = (string)json.SelectToken("language_code");
+                using (TextReader reader = File.OpenText(fileName))
+                {
+                    JObject json = JObject.Load(new JsonTextReader(reader));
+                    DeviceModelId = (string)json.SelectToken("device_model_id");
+                    DeviceId = (string)json.SelectToken("device_id");
+                    LanguageCode = (string)json.SelectToken("language_code");
+                    ShowWelcome = (json.SelectToken("show_welcome") != null) ? (bool)json.SelectToken("show_welcome") : true;
+                }
+            }
+            else
+            {
+                ShowWelcome = true;
             }
         }
 
@@ -66,6 +77,8 @@ namespace GoogleAssistantWindows
                     writer.WriteValue(DeviceId);
                     writer.WritePropertyName("language_code");
                     writer.WriteValue(LanguageCode);
+                    writer.WritePropertyName("show_welcome");
+                    writer.WriteValue(ShowWelcome);
                     writer.WriteEndObject();
                 }
             }
