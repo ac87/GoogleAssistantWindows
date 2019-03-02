@@ -2,6 +2,9 @@
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Drawing;
+using System.IO;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -21,6 +24,7 @@ namespace GoogleAssistantWindows
         private readonly UserManager _userManager;
         private readonly Assistant _assistant;
         private readonly Settings settings;
+        private readonly DeviceRegistration deviceRegistration;
 
         private readonly KeyboardHook _hook;
 
@@ -32,7 +36,7 @@ namespace GoogleAssistantWindows
 
         private ObservableCollection<DialogResult> dialogResults;
 
-        public MainWindow(Assistant assistant, UserManager userManager, Settings settings)
+        public MainWindow(Assistant assistant, UserManager userManager, Settings settings, DeviceRegistration deviceRegistration)
         {
             InitializeComponent();
 
@@ -49,7 +53,7 @@ namespace GoogleAssistantWindows
 
             // When minimized it will hide in the tray. but the global keyboard hook should still work
             _notifyIcon = new NotifyIcon();
-            _notifyIcon.Icon = new System.Drawing.Icon("Mic.ico");
+            _notifyIcon.Icon = ReadIcon("mic.ico");
             _notifyIcon.Text = Title;            
             _notifyIcon.DoubleClick +=
                 delegate
@@ -66,6 +70,8 @@ namespace GoogleAssistantWindows
 
             this._userManager = userManager;
             this._userManager.OnUserUpdate += OnUserUpdate;
+
+            this.deviceRegistration = deviceRegistration;
 
             this.settings = settings;
 
@@ -127,7 +133,7 @@ namespace GoogleAssistantWindows
                 ButtonRecord.Dispatcher.BeginInvoke(new Action(() => UpdateButtonText(state)));
         }
 
-        private void OnUserUpdate(UserManager.GoogleUserData userData)
+        private async void OnUserUpdate(UserManager.GoogleUserData userData)
         {
             ButtonRecord.IsEnabled = false;
             _assistant.Shutdown();
@@ -136,6 +142,23 @@ namespace GoogleAssistantWindows
                 _assistant.InitAssistantForUser(_userManager.GetChannelCredential());
                 ButtonRecord.IsEnabled = true;
             }
+
+            if(string.IsNullOrEmpty(settings.DeviceModelId))
+            {
+                string deviceModelId = await deviceRegistration.RegisterDeviceModel(settings.ProjectId, _userManager.Credential);
+                string deviceId = await deviceRegistration.RegisterDeviceInstance(settings.ProjectId, _userManager.Credential, deviceModelId);
+
+                settings.DeviceModelId = deviceModelId;
+                settings.DeviceId = deviceId;
+            }
+
+            if (string.IsNullOrEmpty(settings.DeviceId))
+            {
+                string deviceId = await deviceRegistration.RegisterDeviceInstance(settings.ProjectId, _userManager.Credential, settings.DeviceModelId);
+                settings.DeviceId = deviceId;
+            }
+
+            settings.Save();
         }
 
         private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
@@ -185,6 +208,17 @@ namespace GoogleAssistantWindows
         private void OnLogFileClick(object sender, RoutedEventArgs e)
         {
             Process.Start(Utils.GetDataStoreFolder() + "log.txt");
+        }
+
+        private Icon ReadIcon(string fileName)
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            var resourceName = "GoogleAssistantWindows." + fileName;
+
+            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+            {
+                return new System.Drawing.Icon(stream);
+            }
         }
     }
 }

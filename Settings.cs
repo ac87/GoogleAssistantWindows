@@ -39,6 +39,22 @@ namespace GoogleAssistantWindows
         public string LanguageCode { get; set; }
         public bool ShowWelcome { get; set; }
 
+        public string ProjectId
+        {
+            get
+            {
+                try
+                {
+                    JObject json = JObject.Parse(ClientId);
+                    return (string)json.SelectToken("installed").SelectToken("project_id");
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
+            }
+        }
+
         public void Load()
         {
             ClientId = File.ReadAllText(Utils.GetDataStoreFolder() + ClientIdFilename);

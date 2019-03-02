@@ -27,6 +27,7 @@ namespace GoogleAssistantWindows
                 .SingleInstance();
             builder.RegisterType<UserManager>()
                 .SingleInstance();
+            builder.RegisterType<DeviceRegistration>();
 
             builder.RegisterType<Settings>()
                 .OnActivating(settings =>

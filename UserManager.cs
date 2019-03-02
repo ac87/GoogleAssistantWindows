@@ -19,7 +19,7 @@ namespace GoogleAssistantWindows
     {
         private const int TokenRefreshTime = 1000 * 60 * 50; // token expires every 60 mins for assistant? The token says 3600s, maybe need to renew the token every minute?
 
-        private UserCredential _credential;
+        
         private Timer _tokenRefreshTimer;
 
         private GoogleUserData _userData;  
@@ -35,21 +35,23 @@ namespace GoogleAssistantWindows
             this.settings.OnClientIdChanged += OnClientIdChanged;
         }
 
+        public UserCredential Credential { get; private set; }
+
         public ChannelCredentials GetChannelCredential()
         {
-            return _credential.ToChannelCredentials();
+            return Credential.ToChannelCredentials();
         }
 
-        public bool IsSignedIn => _credential != null;
+        public bool IsSignedIn => Credential != null;
 
         public void SignOut()
         {
-            if (_credential != null)
+            if (Credential != null)
             {
                 if (_tokenRefreshTimer != null)
                     _tokenRefreshTimer.Stop();
 
-                _credential.RevokeTokenAsync(CancellationToken.None).Wait();
+                Credential.RevokeTokenAsync(CancellationToken.None).Wait();
 
                 foreach (string file in Directory.EnumerateFiles(Utils.GetDataStoreFolder()))
                 {
@@ -61,27 +63,27 @@ namespace GoogleAssistantWindows
                 }
             }
 
-            _credential = null;
+            Credential = null;
         }
 
         public async Task GetOrRefreshCredential()
         {
-            if (_credential == null)
+            if (Credential == null)
             {
                 using (var stream = new FileStream(Utils.GetDataStoreFolder() + @"client_id.json", FileMode.Open, FileAccess.Read))
                 {
-                    _credential =
+                    Credential =
                         await GoogleWebAuthorizationBroker.AuthorizeAsync(GoogleClientSecrets.Load(stream).Secrets,
                             Const.Scope, Const.User, CancellationToken.None, new FileDataStore(Const.Folder));
-                    await _credential.RefreshTokenAsync(CancellationToken.None);
-                    await GetGooglePlusUserData(_credential.Token.AccessToken);
+                    await Credential.RefreshTokenAsync(CancellationToken.None);
+                    await GetGooglePlusUserData(Credential.Token.AccessToken);
                     OnUserUpdate?.Invoke(_userData);
                     StartRefreshTimer();
                 }
             }
             else
             {
-                await _credential.RefreshTokenAsync(CancellationToken.None);
+                await Credential.RefreshTokenAsync(CancellationToken.None);
             }
         }
 

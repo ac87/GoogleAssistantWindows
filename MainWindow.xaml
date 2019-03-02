@@ -7,7 +7,7 @@
         xmlns:util="clr-namespace:GoogleAssistantWindows.Util"
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
-        Title="G-Assistant" Height="368" Width="525" Loaded="MainWindow_OnLoaded" ResizeMode="CanMinimize">
+        Title="GAssistant" Height="368" Width="525" Loaded="MainWindow_OnLoaded" ResizeMode="CanMinimize">
 
     <Window.Resources>
         <local:DialogResultDataTemplateSelector x:Key="dialogResultDataTemplateSelector"/>
