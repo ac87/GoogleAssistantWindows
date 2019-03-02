@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleAssistantWindows", "GoogleAssistantWindows.csproj", "{2C5132E2-EA4E-45FB-8207-A777185FD785}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleAssistantWindows", "GAssistant\GoogleAssistantWindows.csproj", "{2C5132E2-EA4E-45FB-8207-A777185FD785}"
 EndProject
-Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "GAssistant.Store", "..\GAssistant.Store\GAssistant.Store.wapproj", "{FA7BBACE-16A0-4C8C-A5E6-F3F149ADD7BF}"
+Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "GAssistant.Store", "GAssistant.Store\GAssistant.Store.wapproj", "{FA7BBACE-16A0-4C8C-A5E6-F3F149ADD7BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

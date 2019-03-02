@@ -1,12 +1,12 @@
-Remove-Item -Recurse -Force -ErrorAction Ignore proto\
-New-Item -ItemType directory -Path proto\
+Remove-Item -Recurse -Force -ErrorAction Ignore GAssistant\proto\
+New-Item -ItemType directory -Path GAssistant\proto\
 
-git clone https://github.com/googleapis/googleapis.git proto
+git clone https://github.com/googleapis/googleapis.git GAssistant\proto
 
-.\Tools\Grpc\tools\windows_x64\protoc.exe --proto_path proto\ --proto_path Tools\Protoc\include\ --csharp_out Generated\assistant --grpc_out Generated\assistant proto\google\assistant\embedded\v1alpha2\embedded_assistant.proto --plugin=protoc-gen-grpc=.\Tools\Grpc\tools/windows_x64/grpc_csharp_plugin.exe
+.\Tools\Grpc\tools\windows_x64\protoc.exe --proto_path proto\ --proto_path Tools\Protoc\include\ --csharp_out GGAssistant\enerated\assistant --grpc_out GAssistant\Generated\assistant proto\google\assistant\embedded\v1alpha2\embedded_assistant.proto --plugin=protoc-gen-grpc=.\Tools\Grpc\tools/windows_x64/grpc_csharp_plugin.exe
 
-.\Tools\Grpc\tools\windows_x64\protoc.exe --proto_path proto\ --proto_path Tools\Protoc\include\ --csharp_out Generated\googleapis --grpc_out Generated\googleapis proto\google\rpc\status.proto proto\google\api\annotations.proto proto\google\api\http.proto --plugin=protoc-gen-grpc=.\Tools\Grpc\tools/windows_x64/grpc_csharp_plugin.exe
+.\Tools\Grpc\tools\windows_x64\protoc.exe --proto_path proto\ --proto_path Tools\Protoc\include\ --csharp_out GAssistant\Generated\googleapis --grpc_out GAssistant\Generated\googleapis proto\google\rpc\status.proto GAssistant\proto\google\api\annotations.proto proto\google\api\http.proto --plugin=protoc-gen-grpc=.\Tools\Grpc\tools/windows_x64/grpc_csharp_plugin.exe
 
-.\Tools\Grpc\tools\windows_x64\protoc.exe --proto_path proto\ --proto_path Tools\Protoc\include\ --csharp_out Generated\googleapis --grpc_out Generated\googleapis proto\google\type\latlng.proto --plugin=protoc-gen-grpc=.\Tools\Grpc\tools/windows_x64/grpc_csharp_plugin.exe
+.\Tools\Grpc\tools\windows_x64\protoc.exe --proto_path proto\ --proto_path Tools\Protoc\include\ --csharp_out GAssistant\Generated\googleapis --grpc_out GAssistant\Generated\googleapis proto\google\type\latlng.proto --plugin=protoc-gen-grpc=.\Tools\Grpc\tools/windows_x64/grpc_csharp_plugin.exe
 
-Remove-Item -Recurse -Force -ErrorAction Ignore proto\
+Remove-Item -Recurse -Force -ErrorAction Ignore GAssistant\proto\
