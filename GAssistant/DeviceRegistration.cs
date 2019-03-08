@@ -14,6 +14,8 @@ namespace GoogleAssistantWindows
 {
     public class DeviceRegistration
     {
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+
         private const string deviceModelId = "gassistant_windows";
         private const string deviceInstanceId = "my_gassistant_windows";
 
@@ -43,7 +45,7 @@ namespace GoogleAssistantWindows
                 writer.WriteValue("Open Source Google Assisant client for Windows.");
                 writer.WriteEndObject();
                 writer.WritePropertyName("device_type");
-                writer.WriteValue("action.devices.types.PHONE");
+                writer.WriteValue("action.devices.types.TV");
                 writer.WriteEndObject();
             }
 
@@ -52,10 +54,15 @@ namespace GoogleAssistantWindows
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", credential.Token.AccessToken);
                 HttpResponseMessage response = await client.PostAsync(url, new StringContent(sb.ToString(), Encoding.UTF8, "application/json"));
 
-                if (response.StatusCode == HttpStatusCode.Accepted || response.StatusCode == HttpStatusCode.Conflict)
+                if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted || response.StatusCode == HttpStatusCode.Conflict)
                     return deviceModelId;
                 else
+                {
+                    string message = await response.Content.ReadAsStringAsync();
+                    logger.Error(message);
+
                     throw new Exception("Failed to register the device model.");
+                }
             }
         }
 
@@ -87,10 +94,15 @@ namespace GoogleAssistantWindows
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", credential.Token.AccessToken);
                 HttpResponseMessage response = await client.PostAsync(url, new StringContent(sb.ToString(), Encoding.UTF8, "application/json"));
 
-                if (response.StatusCode == HttpStatusCode.Accepted || response.StatusCode == HttpStatusCode.Conflict)
+                if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Accepted || response.StatusCode == HttpStatusCode.Conflict)
                     return deviceInstanceId;
                 else
+                {
+                    string message = await response.Content.ReadAsStringAsync();
+                    logger.Error(message);
+
                     throw new Exception("Failed to register the device instance.");
+                }
             }
         }
     }

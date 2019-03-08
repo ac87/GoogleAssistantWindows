@@ -871,7 +871,8 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
     public const int AudioInConfigFieldNumber = 1;
     /// <summary>
     /// Specifies how to process the subsequent incoming audio. Required if
-    /// [AssistRequest.audio_in][google.assistant.embedded.v1alpha2.AssistRequest.audio_in] bytes will be provided in subsequent requests.
+    /// [AssistRequest.audio_in][google.assistant.embedded.v1alpha2.AssistRequest.audio_in]
+    /// bytes will be provided in subsequent requests.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Assistant.Embedded.V1Alpha2.AudioInConfig AudioInConfig {
@@ -1203,7 +1204,8 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
   /// <summary>
   /// Specifies how to process the `audio_in` data that will be provided in
   /// subsequent requests. For recommended settings, see the Google Assistant SDK
-  /// [best practices](https://developers.google.com/assistant/sdk/guides/service/python/best-practices/audio).
+  /// [best
+  /// practices](https://developers.google.com/assistant/sdk/guides/service/python/best-practices/audio).
   /// </summary>
   public sealed partial class AudioInConfig : pb::IMessage<AudioInConfig> {
     private static readonly pb::MessageParser<AudioInConfig> _parser = new pb::MessageParser<AudioInConfig>(() => new AudioInConfig());
@@ -1811,10 +1813,11 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
     private pb::ByteString conversationState_ = pb::ByteString.Empty;
     /// <summary>
     /// *Required* This field must always be set to the
-    /// [DialogStateOut.conversation_state][google.assistant.embedded.v1alpha2.DialogStateOut.conversation_state] value that was returned in the prior
-    /// `Assist` RPC. It should only be omitted (field not set) if there was no
-    /// prior `Assist` RPC because this is the first `Assist` RPC made by this
-    /// device after it was first setup and/or a factory-default reset.
+    /// [DialogStateOut.conversation_state][google.assistant.embedded.v1alpha2.DialogStateOut.conversation_state]
+    /// value that was returned in the prior `Assist` RPC. It should only be
+    /// omitted (field not set) if there was no prior `Assist` RPC because this is
+    /// the first `Assist` RPC made by this device after it was first setup and/or
+    /// a factory-default reset.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString ConversationState {
@@ -1830,9 +1833,11 @@ namespace Google.Assistant.Embedded.V1Alpha2 {
     /// <summary>
     /// *Required* Language of the request in
     /// [IETF BCP 47 syntax](https://tools.ietf.org/html/bcp47) (for example,
-    /// "en-US"). See [Language Support](https://developers.google.com/assistant/sdk/reference/rpc/languages)
+    /// "en-US"). See [Language
+    /// Support](https://developers.google.com/assistant/sdk/reference/rpc/languages)
     /// for more information. If you have selected a language for this `device_id`
-    /// using the [Settings](https://developers.google.com/assistant/sdk/reference/assistant-app/assistant-settings)
+    /// using the
+    /// [Settings](https://developers.google.com/assistant/sdk/reference/assistant-app/assistant-settings)
     /// menu in your phone's Google Assistant app, that selection will override
     /// this value.
     /// </summary>

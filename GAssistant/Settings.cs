@@ -57,7 +57,8 @@ namespace GoogleAssistantWindows
 
         public void Load()
         {
-            ClientId = File.ReadAllText(Utils.GetDataStoreFolder() + ClientIdFilename);
+            if(File.Exists(Utils.GetDataStoreFolder() + ClientIdFilename))
+                ClientId = File.ReadAllText(Utils.GetDataStoreFolder() + ClientIdFilename);
 
             string fileName = Utils.GetDataStoreFolder() + SettingsFilename;
 
@@ -75,6 +76,7 @@ namespace GoogleAssistantWindows
             else
             {
                 ShowWelcome = true;
+                LanguageCode = "en-US";
             }
         }
 
